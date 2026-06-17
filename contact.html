@@ -96,6 +96,10 @@ form select option{background:var(--card);color:#fff}
 form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 4px rgba(240,90,40,.14)}
 .submit{width:100%;justify-content:center;border:0;cursor:pointer;font-family:inherit;font-size:15px;padding:14px 14px 14px 22px;margin-top:4px}
 .formnote{font-size:12px;color:var(--faint);text-align:center;margin-top:14px}
+.consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 8px;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid var(--hairline-2);border-radius:14px}
+.consent input{width:18px;height:18px;flex:none;margin-top:1px;accent-color:var(--signal);cursor:pointer}
+.consent label{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:12px;line-height:1.55;letter-spacing:0;text-transform:none;color:var(--steel);margin:0;cursor:pointer}
+.consent label a{color:var(--signal);text-decoration:underline}
 .sent{display:none;text-align:center;padding:46px 10px}
 .sent.show{display:block}
 .sent .ok{width:62px;height:62px;border-radius:999px;background:rgba(62,156,107,.15);color:#5BC48E;display:grid;place-items:center;margin:0 auto 18px;font-size:24px}
@@ -185,8 +189,12 @@ footer{padding:52px 0 40px;border-top:1px solid var(--hairline);position:relativ
                 </select>
               </div>
               <div class="fld"><label>Anything you'd like us to look at? (optional)</label><textarea name="message" placeholder="Current website, what's frustrating you, goals…"></textarea></div>
+              <div class="consent">
+                <input type="checkbox" id="smsConsent" name="sms_consent" value="Yes — opted in to SMS" />
+                <label for="smsConsent">I agree to receive text messages from Signalcraft (appointment confirmations, my free audit link, and follow-ups) at the phone number provided. Consent is not a condition of any purchase. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> &amp; <a href="terms.html">Terms</a>.</label>
+              </div>
               <button type="submit" class="cta-pill submit">Send my free audit request <span class="arr">↗</span></button>
-              <p class="formnote">We reply within one business day. Your info is never sold or shared.</p>
+              <p class="formnote">We reply within one business day. Your information is never sold or shared, and mobile opt-in is never shared with third parties.</p>
             </form>
             <div class="sent" id="sent">
               <div class="ok">✓</div>
@@ -212,6 +220,8 @@ footer{padding:52px 0 40px;border-top:1px solid var(--hairline);position:relativ
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="contact.html">Free audit</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
     <div class="foot-base">
