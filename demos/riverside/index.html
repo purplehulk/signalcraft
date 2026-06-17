@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Riverside Heating &amp; Air — 24/7 HVAC in Chesterfield &amp; Richmond, VA</title>
+<meta name="description" content="AC out in July? Furnace dead in January? Riverside answers every call day or night and gets a licensed tech to your door — usually same day. Chesterfield & Richmond, VA." />
+<meta property="og:title" content="Riverside Heating & Air — Back to comfortable, fast." />
+<meta property="og:description" content="24/7 HVAC repair, replacement & maintenance in the Richmond, VA area. We answer every call." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230D1924'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2346C68A' stroke-width='4'/%3E%3Cline x1='32' y1='32' x2='32' y2='17' stroke='%23F4A23B' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23F4A23B'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --slate:#0D1924; --slate-2:#0A131C; --panel:#142231; --panel-2:#1A2A3C;
+  --cold:#3DA5D9; --cold-deep:#1B6FA8;
+  --comfort:#46C68A; --comfort-deep:#2E9E6C;
+  --heat:#F4A23B; --heat-deep:#E8761F;
+  --paper:#EAF1F4; --paper-2:#DCE7EC;
+  --text:#E7EFF5; --steel:#93A4B5; --faint:#5E7186;
+  --hair:rgba(255,255,255,.09); --hair-2:rgba(255,255,255,.16);
+  --ink:#0D1924; --ink-soft:#3A4C5C;
+  --ease:cubic-bezier(.22,.68,0,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--slate-2);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--comfort);color:#04140C}
+h1,h2,h3,.dsp{font-family:'Archivo',sans-serif;letter-spacing:-.02em;line-height:1.04;font-weight:800}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}}
+
+/* nav */
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:8px;
+  padding:8px 8px 8px 20px;border-radius:999px;background:rgba(13,25,36,.66);backdrop-filter:blur(18px);
+  border:1px solid var(--hair-2);box-shadow:0 20px 50px -22px rgba(0,0,0,.7);max-width:calc(100vw - 32px)}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:800;font-size:16px;letter-spacing:-.02em}
+.brand .mk{width:24px;height:24px;flex:none}
+.navlinks{display:flex;gap:4px;margin-left:8px}
+.navlinks a{padding:8px 13px;border-radius:999px;font-size:14px;color:var(--steel);transition:color .2s,background .2s}
+.navlinks a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.navcall{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px;
+  background:var(--heat);color:#1c0d00;transition:transform .2s var(--ease),box-shadow .2s}
+.navcall:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px var(--heat-deep)}
+
+/* hero */
+.hero{position:relative;padding:148px 0 70px;overflow:hidden}
+/* hero background: AI video (assets/hero.mp4) layered over a motion stand-in + scrim */
+.herobg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--ease)}
+.herovid.ready{opacity:.5}
+.cinemagraph{position:absolute;inset:-8%;
+  background:
+    radial-gradient(58% 80% at 80% 6%, rgba(244,162,59,.26), transparent 60%),
+    radial-gradient(52% 72% at 6% 88%, rgba(61,165,217,.20), transparent 60%),
+    radial-gradient(46% 60% at 46% 116%, rgba(70,198,138,.16), transparent 62%),
+    linear-gradient(116deg, transparent 34%, rgba(255,228,180,.10) 47%, transparent 60%);
+  animation:drift 20s var(--ease) infinite alternate}
+@keyframes drift{from{transform:translate3d(-1.5%,-1%,0) scale(1.06)}to{transform:translate3d(1.5%,1%,0) scale(1.13)}}
+.beam{position:absolute;top:-20%;left:62%;width:46%;height:150%;
+  background:linear-gradient(105deg, transparent, rgba(255,224,170,.14), transparent);
+  transform:rotate(8deg);filter:blur(6px);animation:beam 9s var(--ease) infinite alternate}
+@keyframes beam{from{opacity:.4;transform:rotate(8deg) translateX(-8%)}to{opacity:.85;transform:rotate(8deg) translateX(8%)}}
+.scrim{position:absolute;inset:0;background:
+  linear-gradient(180deg, rgba(10,19,28,.42) 0%, rgba(10,19,28,.70) 70%, rgba(10,19,28,.92) 100%),
+  linear-gradient(90deg, rgba(10,19,28,.72) 0%, rgba(10,19,28,.30) 50%, transparent 80%)}
+@media(prefers-reduced-motion:reduce){.cinemagraph,.beam{animation:none}}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:center}
+.h-eye{display:inline-flex;align-items:center;gap:9px;margin-bottom:20px}
+.h-eye .dot{width:8px;height:8px;border-radius:50%;background:var(--comfort);box-shadow:0 0 0 4px rgba(70,198,138,.18);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(70,198,138,.18)}50%{box-shadow:0 0 0 9px rgba(70,198,138,0)}}
+h1{font-size:clamp(40px,6vw,68px)}
+h1 .warm{color:var(--heat)}
+.h-sub{margin:22px 0 30px;font-size:18.5px;color:var(--steel);max-width:30em}
+.h-cta{display:flex;flex-wrap:wrap;gap:13px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;border-radius:13px;padding:15px 24px;transition:transform .2s var(--ease),box-shadow .25s,background .2s}
+.btn-primary{background:var(--comfort);color:#04140C}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px var(--comfort-deep)}
+.btn-ghost{background:transparent;border:1px solid var(--hair-2);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.05);border-color:var(--steel)}
+.h-trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;padding-top:24px;border-top:1px solid var(--hair)}
+.h-trust .ti{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--steel)}
+.h-trust b{color:#fff;font-weight:600}
+.stars{color:var(--heat);letter-spacing:1px}
+
+/* gauge */
+.gauge-card{position:relative;background:linear-gradient(165deg,var(--panel),var(--panel-2));border:1px solid var(--hair-2);
+  border-radius:26px;padding:30px 30px 26px;box-shadow:0 40px 90px -40px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.06)}
+.gauge-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.gauge-top .lbl{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.gauge-top .live{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--comfort)}
+.gauge-top .live i{width:7px;height:7px;border-radius:50%;background:var(--comfort);display:inline-block}
+.dialwrap{position:relative;width:264px;height:264px;margin:6px auto 4px}
+.dial{position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 60deg,
+    var(--cold) 0deg, #4FC3E8 56deg, var(--comfort) 116deg, #8fd9b3 124deg, var(--heat) 184deg, var(--heat-deep) 240deg,
+    rgba(255,255,255,.05) 240deg 360deg);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 26px),#000 calc(100% - 25px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 26px),#000 calc(100% - 25px));
+  filter:saturate(1.05)}
+.dial-core{position:absolute;inset:34px;border-radius:50%;background:radial-gradient(120% 120% at 50% 30%,#16273a,#0c1521);
+  border:1px solid var(--hair);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.readout{font-family:'IBM Plex Mono';font-weight:500;font-size:54px;color:#fff;line-height:1}
+.readout sup{font-size:22px;color:var(--comfort);vertical-align:super;margin-left:2px}
+.readout-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--comfort)}
+.needle{position:absolute;left:50%;top:50%;width:4px;height:106px;border-radius:4px;background:linear-gradient(#fff,var(--heat));
+  transform-origin:50% 100%;transform:translate(-50%,-100%) rotate(70deg);transition:transform 2.1s var(--ease)}
+.needle.set{transform:translate(-50%,-100%) rotate(180deg)}
+.hub{position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:var(--heat);transform:translate(-50%,-50%);box-shadow:0 0 0 5px rgba(244,162,59,.18)}
+.gauge-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--faint);font-family:'IBM Plex Mono';margin-top:8px}
+.gauge-cap{text-align:center;font-size:13.5px;color:var(--steel);margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)}
+.gauge-cap b{color:#fff;font-weight:600}
+
+/* section base */
+.section{position:relative;padding:78px 0}
+.s-head{max-width:620px;margin-bottom:42px}
+.s-head h2{font-size:clamp(28px,3.6vw,42px);margin:14px 0 0}
+.s-head p{color:var(--steel);font-size:17px;margin-top:14px}
+
+/* ask riley */
+.riley{background:linear-gradient(180deg,var(--slate),var(--slate-2))}
+.riley-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.riley-copy h2{font-size:clamp(28px,3.6vw,42px);margin:14px 0 16px}
+.riley-copy p{color:var(--steel);font-size:17px;margin-bottom:18px;max-width:30em}
+.riley-feats{list-style:none;display:grid;gap:12px;margin-top:22px}
+.riley-feats li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.riley-feats .ck{flex:none;width:24px;height:24px;border-radius:7px;background:rgba(70,198,138,.16);color:var(--comfort);display:grid;place-items:center;font-weight:700;font-size:13px}
+.chat{background:var(--panel);border:1px solid var(--hair-2);border-radius:22px;overflow:hidden;box-shadow:0 40px 90px -44px rgba(0,0,0,.85)}
+.chat-bar{display:flex;align-items:center;gap:11px;padding:15px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--hair)}
+.chat-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(150deg,var(--comfort),var(--cold));display:grid;place-items:center;font-family:'Archivo';font-weight:800;color:#04140C;font-size:16px}
+.chat-bar .nm{font-family:'Archivo';font-weight:700;font-size:15px}
+.chat-bar .st{font-size:12px;color:var(--comfort);display:flex;align-items:center;gap:6px}
+.chat-bar .st i{width:6px;height:6px;border-radius:50%;background:var(--comfort);display:inline-block}
+.chat-log{padding:18px;display:flex;flex-direction:column;gap:12px;height:340px;overflow-y:auto;scroll-behavior:smooth}
+.msg{max-width:82%;padding:11px 15px;border-radius:16px;font-size:14.5px;line-height:1.5;animation:pop .35s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.msg.bot{align-self:flex-start;background:var(--panel-2);border:1px solid var(--hair);border-bottom-left-radius:5px}
+.msg.user{align-self:flex-end;background:var(--comfort);color:#04140C;border-bottom-right-radius:5px;font-weight:500}
+.msg.bot b{color:#fff}
+.typing{align-self:flex-start;display:flex;gap:5px;padding:14px 16px;background:var(--panel-2);border:1px solid var(--hair);border-radius:16px;border-bottom-left-radius:5px}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--steel);animation:bounce 1.3s infinite}
+.typing span:nth-child(2){animation-delay:.18s}.typing span:nth-child(3){animation-delay:.36s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 12px}
+.chip{font-size:13px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--hair-2);color:var(--steel);cursor:pointer;transition:.18s}
+.chip:hover{color:#fff;border-color:var(--comfort);background:rgba(70,198,138,.1)}
+.chat-input{display:flex;gap:9px;padding:14px 16px;border-top:1px solid var(--hair);background:rgba(255,255,255,.02)}
+.chat-input input{flex:1;background:var(--slate-2);border:1px solid var(--hair-2);border-radius:11px;padding:12px 14px;color:#fff;font-family:inherit;font-size:14.5px;outline:none;transition:border-color .2s}
+.chat-input input:focus{border-color:var(--comfort)}
+.chat-input button{flex:none;width:44px;border-radius:11px;border:none;background:var(--comfort);color:#04140C;font-size:18px;cursor:pointer;font-weight:700;transition:.18s}
+.chat-input button:hover{background:#5fd49d}
+.demo-note{font-size:12px;color:var(--faint);text-align:center;margin-top:12px;font-family:'IBM Plex Mono'}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:linear-gradient(165deg,var(--panel),var(--panel-2));border:1px solid var(--hair);border-radius:18px;padding:26px 24px;transition:transform .28s var(--ease),border-color .28s}
+.svc:hover{transform:translateY(-5px);border-color:var(--hair-2)}
+.svc .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;font-size:24px}
+.svc.cold .ic{background:rgba(61,165,217,.15);color:var(--cold)}
+.svc.heat .ic{background:rgba(244,162,59,.15);color:var(--heat)}
+.svc.air .ic{background:rgba(70,198,138,.15);color:var(--comfort)}
+.svc h3{font-size:20px;margin-bottom:9px}
+.svc p{color:var(--steel);font-size:14.5px}
+.svc .from{display:block;margin-top:16px;font-family:'IBM Plex Mono';font-size:13px;color:var(--faint)}
+.svc .from b{color:#fff;font-weight:500}
+
+/* process */
+.proc{background:linear-gradient(180deg,var(--slate-2),#0c1722)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:s}
+.step{position:relative;padding-top:26px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:'IBM Plex Mono';font-size:13px;color:var(--comfort);letter-spacing:.1em}
+.step h3{font-size:19px;margin:10px 0 8px}
+.step p{color:var(--steel);font-size:14.5px}
+.step::after{content:"";position:absolute;top:30px;left:46px;right:-26px;height:1px;background:linear-gradient(90deg,var(--hair-2),transparent)}
+.step:last-child::after{display:none}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:24px}
+.rev .stars{font-size:15px;margin-bottom:13px;display:block}
+.rev p{font-size:15px;color:var(--text);margin-bottom:18px}
+.rev .who{display:flex;align-items:center;gap:11px}
+.rev .who .av{width:38px;height:38px;border-radius:50%;background:var(--panel-2);border:1px solid var(--hair-2);display:grid;place-items:center;font-weight:700;color:var(--comfort);font-family:'Archivo'}
+.rev .who .nm{font-weight:600;font-size:14px}
+.rev .who .loc{font-size:12.5px;color:var(--faint)}
+
+/* book / cta */
+.book{background:linear-gradient(160deg,var(--paper),var(--paper-2));color:var(--ink);border-radius:30px;padding:62px 40px;text-align:center;position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 320px at 50% -20%,rgba(70,198,138,.22),transparent 60%);pointer-events:none}
+.book .eyebrow{color:var(--comfort-deep)}
+.book h2{font-size:clamp(30px,4vw,48px);color:var(--ink);margin:14px 0 16px;position:relative}
+.book p{color:var(--ink-soft);font-size:18px;max-width:34em;margin:0 auto 30px;position:relative}
+.book .h-cta{justify-content:center;position:relative}
+.book .btn-ghost{border-color:rgba(13,25,36,.2);color:var(--ink)}
+.book .btn-ghost:hover{background:rgba(13,25,36,.05);border-color:var(--ink)}
+.book .fine{margin-top:22px;font-size:13px;color:var(--ink-soft);position:relative}
+
+/* footer */
+footer{padding:52px 0 40px;border-top:1px solid var(--hair)}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.foot-grid .brand{margin-bottom:14px}
+.foot-tag{color:var(--steel);font-size:14px;max-width:26em}
+.foot-col h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:13px;font-family:'IBM Plex Mono';font-weight:500}
+.foot-col a,.foot-col p{display:block;color:var(--steel);font-size:14px;margin-bottom:9px;transition:color .2s}
+.foot-col a:hover{color:#fff}
+.foot-base{margin-top:40px;padding-top:22px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--faint)}
+.foot-base .by{color:var(--steel)}
+.foot-base .by b{color:var(--heat);font-weight:600}
+
+@media(max-width:880px){
+  .hero{padding:128px 0 50px}
+  .hero .wrap,.riley-grid{grid-template-columns:1fr;gap:40px}
+  .gauge-card{max-width:380px;margin:0 auto}
+  .svc-grid,.steps,.rev-grid{grid-template-columns:1fr}
+  .step::after{display:none}
+  .navlinks{display:none}
+}
+@media(max-width:520px){
+  .wrap{padding:0 18px}
+  nav{padding:7px 7px 7px 16px}
+  .btn{padding:14px 20px}
+}
+.skip{position:absolute;left:-999px;top:0;background:var(--comfort);color:#04140C;padding:10px 16px;border-radius:8px;z-index:200}
+.skip:focus{left:12px;top:12px}
+</style>
+</head>
+<body>
+<a href="#book" class="skip">Skip to booking</a>
+
+<nav aria-label="Primary">
+  <span class="brand">
+    <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#142231"/><circle cx="32" cy="32" r="17" fill="none" stroke="#46C68A" stroke-width="4"/><line x1="32" y1="32" x2="32" y2="17" stroke="#F4A23B" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="4" fill="#F4A23B"/></svg>
+    Riverside
+  </span>
+  <span class="navlinks">
+    <a href="#services">Services</a>
+    <a href="#riley">Ask Riley</a>
+    <a href="#process">How it works</a>
+    <a href="#reviews">Reviews</a>
+  </span>
+  <a href="tel:+18044065307" class="navcall" aria-label="Call Riverside now">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (804) 406-5307
+  </a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="herobg" aria-hidden="true">
+    <div class="cinemagraph"></div>
+    <div class="beam"></div>
+    <video class="herovid" id="herovid" autoplay muted loop playsinline preload="auto" poster="">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="scrim"></div>
+  </div>
+  <div class="wrap">
+    <div class="h-copy">
+      <span class="h-eye rv"><span class="dot" aria-hidden="true"></span><span class="eyebrow">24/7 HVAC · Chesterfield &amp; Richmond, VA</span></span>
+      <h1 class="rv d1">Back to <span class="warm">comfortable</span>, fast.</h1>
+      <p class="h-sub rv d2">AC quit in July? Furnace dead in January? Riverside answers every call — day or night — and gets a licensed tech to your door, usually the same day.</p>
+      <div class="h-cta rv d3">
+        <a href="#book" class="btn btn-primary">Book a visit
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:+18044065307" class="btn btn-ghost">Call now</a>
+      </div>
+      <div class="h-trust rv d4">
+        <span class="ti"><span class="stars" aria-hidden="true">★★★★★</span> <b>4.9</b>&nbsp;· 380+ reviews</span>
+        <span class="ti"><b>Same-day</b> service</span>
+        <span class="ti">Licensed &amp; insured · <b>VA #2705</b></span>
+      </div>
+    </div>
+
+    <div class="h-gauge rv d2">
+      <div class="gauge-card">
+        <div class="gauge-top">
+          <span class="lbl">Your home</span>
+          <span class="live"><i aria-hidden="true"></i>System online</span>
+        </div>
+        <div class="dialwrap" role="img" aria-label="Thermostat dial settling at 72 degrees, the comfortable zone">
+          <div class="dial" aria-hidden="true"></div>
+          <div class="needle" id="needle" aria-hidden="true"></div>
+          <div class="hub" aria-hidden="true"></div>
+          <div class="dial-core">
+            <span class="readout"><span id="temp">58</span>°<sup>F</sup></span>
+            <span class="readout-lbl">Comfortable</span>
+          </div>
+        </div>
+        <div class="gauge-foot"><span>COLD 55°</span><span>HOT 90°</span></div>
+        <p class="gauge-cap">From <b>no cool air</b> to <b>72° and steady</b> — that's a typical same-day fix.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section riley" id="riley" aria-labelledby="riley-h">
+  <div class="wrap riley-grid">
+    <div class="riley-copy rv">
+      <span class="eyebrow">The receptionist that never sleeps</span>
+      <h2 id="riley-h">Meet Riley — she answers every call &amp; chat.</h2>
+      <p>When your AC dies at 9pm, you don't want voicemail. Riley picks up instantly — on the phone or right here on the site — qualifies the problem, and books the visit. No missed call, no lost job.</p>
+      <ul class="riley-feats">
+        <li><span class="ck" aria-hidden="true">✓</span><span>Answers 24/7 and books straight into our schedule.</span></li>
+        <li><span class="ck" aria-hidden="true">✓</span><span>Knows our services, hours, and service area cold.</span></li>
+        <li><span class="ck" aria-hidden="true">✓</span><span>Texts you a confirmation the second you're booked.</span></li>
+      </ul>
+    </div>
+
+    <div class="rv d2">
+      <div class="chat" aria-label="Live chat demo with Riley">
+        <div class="chat-bar">
+          <div class="chat-av" aria-hidden="true">R</div>
+          <div>
+            <div class="nm">Riley</div>
+            <div class="st"><i aria-hidden="true"></i>Online now · replies instantly</div>
+          </div>
+        </div>
+        <div class="chat-log" id="log" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+        <form class="chat-input" id="form" autocomplete="off">
+          <label for="msg" class="skip">Message Riley</label>
+          <input id="msg" name="msg" placeholder="Ask Riley anything…" />
+          <button type="submit" aria-label="Send">↑</button>
+        </form>
+      </div>
+      <p class="demo-note">Live demo · in production this runs on Claude AI</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="s-head rv">
+      <span class="eyebrow">What we do</span>
+      <h2 id="svc-h">Whatever the season threw at you.</h2>
+      <p>Repair, replace, or maintain — heating, cooling, and the air you breathe. Upfront pricing, no surprises.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc cold rv d1">
+        <div class="ic" aria-hidden="true">❄</div>
+        <h3>Cooling &amp; AC</h3>
+        <p>Repairs, recharges, and new high-efficiency systems that keep the Virginia summer outside where it belongs.</p>
+        <span class="from">Diagnostic from <b>$89</b></span>
+      </article>
+      <article class="svc heat rv d2">
+        <div class="ic" aria-hidden="true">☀</div>
+        <h3>Heating &amp; Furnaces</h3>
+        <p>Furnace and heat-pump repair plus installs, so a January cold snap never catches you off guard.</p>
+        <span class="from">Tune-up from <b>$129</b></span>
+      </article>
+      <article class="svc air rv d3">
+        <div class="ic" aria-hidden="true">≈</div>
+        <h3>Air Quality &amp; Maintenance</h3>
+        <p>Seasonal tune-ups, filters, and indoor-air upgrades that head off the breakdown before it starts.</p>
+        <span class="from">Comfort Club from <b>$19/mo</b></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section proc" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="s-head rv">
+      <span class="eyebrow">How it works</span>
+      <h2 id="proc-h">Three steps to comfortable.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv d1">
+        <h3>Tell us what's wrong</h3>
+        <p>Call or chat with Riley. Two minutes and you're on the schedule — no phone tree, no waiting on hold.</p>
+      </div>
+      <div class="step rv d2">
+        <h3>We show up on time</h3>
+        <p>A licensed Riverside tech arrives in the window we promised and diagnoses it with you, in plain English.</p>
+      </div>
+      <div class="step rv d3">
+        <h3>Fixed &amp; comfortable</h3>
+        <p>You approve the price before we start. We fix it right the first time and leave the house cleaner than we found it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="s-head rv">
+      <span class="eyebrow">Neighbors, not strangers</span>
+      <h2 id="rev-h">Richmond keeps calling us back.</h2>
+    </div>
+    <div class="rev-grid">
+      <article class="rev rv d1">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"AC died during the worst week of July. Called at 8pm, Riley had a tech here by 10 the next morning. Cool by lunch."</p>
+        <div class="who"><span class="av" aria-hidden="true">DT</span><div><div class="nm">Dana T.</div><div class="loc">Midlothian, VA</div></div></div>
+      </article>
+      <article class="rev rv d2">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Quoted me the price before they touched anything. No upsell, no surprises. This is how a service company should run."</p>
+        <div class="who"><span class="av" aria-hidden="true">MR</span><div><div class="nm">Marcus R.</div><div class="loc">Chesterfield, VA</div></div></div>
+      </article>
+      <article class="rev rv d3">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"The Comfort Club tune-up caught a cracked part before it failed in winter. They probably saved me a freezing weekend."</p>
+        <div class="who"><span class="av" aria-hidden="true">PL</span><div><div class="nm">Priya L.</div><div class="loc">Glen Allen, VA</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <div class="book rv">
+      <span class="eyebrow">Get on the schedule</span>
+      <h2 id="book-h">Let's get you back to comfortable.</h2>
+      <p>Book online in under a minute, or call and Riley will take it from here. Same-day slots go fast in peak season.</p>
+      <div class="h-cta">
+        <a href="tel:+18044065307" class="btn btn-primary">Call (804) 406-5307</a>
+        <a href="#riley" class="btn btn-ghost">Chat with Riley</a>
+      </div>
+      <p class="fine">Open 24/7 · Serving Richmond, Chesterfield, Midlothian, Glen Allen &amp; nearby</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <span class="brand">
+          <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#142231"/><circle cx="32" cy="32" r="17" fill="none" stroke="#46C68A" stroke-width="4"/><line x1="32" y1="32" x2="32" y2="17" stroke="#F4A23B" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="4" fill="#F4A23B"/></svg>
+          Riverside Heating &amp; Air
+        </span>
+        <p class="foot-tag">Veteran-owned HVAC keeping the Richmond area comfortable since 2009. Licensed, insured, and answering — always.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">AC &amp; cooling</a>
+        <a href="#services">Heating &amp; furnaces</a>
+        <a href="#services">Air quality</a>
+        <a href="#services">Comfort Club</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+18044065307">(804) 406-5307</a>
+        <a href="mailto:hello@riversidehvac.com">hello@riversidehvac.com</a>
+        <p>Open 24 / 7</p>
+        <p>Chesterfield, VA</p>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Riverside Heating &amp; Air · VA License #2705</span>
+      <span class="by">Site &amp; AI by <b>Signalcraft</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero video: reveal only when a real clip (assets/hero.mp4) is present + playable */
+  var hv = document.getElementById('herovid');
+  if(hv){
+    hv.addEventListener('loadeddata', function(){ if(hv.videoWidth>0) hv.classList.add('ready'); });
+    hv.addEventListener('error', function(){ hv.classList.remove('ready'); }, true);
+  }
+
+  /* scroll reveal */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  /* gauge: needle sweep + readout count to 72 */
+  var needle = document.getElementById('needle'), temp = document.getElementById('temp');
+  function runGauge(){
+    needle.classList.add('set');
+    var start=58, end=72, t0=null, dur=2000;
+    function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+      temp.textContent = Math.round(start+(end-start)*e); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  if(reduce){ needle.classList.add('set'); temp.textContent='72'; }
+  else { setTimeout(runGauge, 550); }
+
+  /* Riley chat demo */
+  var log=document.getElementById('log'), form=document.getElementById('form'),
+      input=document.getElementById('msg'), chipsBox=document.getElementById('chips');
+  var starters=["My AC stopped working","How much for a tune-up?","Are you open right now?","Do you serve Midlothian?"];
+
+  function add(text, who){
+    var d=document.createElement('div'); d.className='msg '+who; d.innerHTML=text; log.appendChild(d);
+    log.scrollTop=log.scrollHeight; return d;
+  }
+  function typing(){
+    var t=document.createElement('div'); t.className='typing'; t.innerHTML='<span></span><span></span><span></span>';
+    log.appendChild(t); log.scrollTop=log.scrollHeight; return t;
+  }
+  function reply(q){
+    q=q.toLowerCase();
+    if(/(ac|a\/c|air|cool|not work|broke|no cold|warm air|hot)/.test(q))
+      return "Oh no — let's get that cooled down. I can get a licensed tech out <b>today</b>. What's your zip, and is the unit running but not cooling, or not turning on at all?";
+    if(/(price|cost|how much|fee|quote|\$)/.test(q))
+      return "A diagnostic visit is <b>$89</b> and a seasonal tune-up starts at <b>$129</b> — and the tech confirms any repair price <b>before</b> starting. Want me to grab a same-day slot?";
+    if(/(open|hours|now|24|late|night|tonight|weekend)/.test(q))
+      return "We're open <b>24/7</b> — including tonight. I can book you in the next available window. What time works best?";
+    if(/(area|serve|midlothian|chesterfield|richmond|glen allen|zip|near|location)/.test(q))
+      return "Yes! We cover <b>Richmond, Chesterfield, Midlothian, Glen Allen</b> and nearby. What's your address so I can confirm and set up a visit?";
+    if(/(furnace|heat|cold|no heat|warm)/.test(q))
+      return "Heat issues we handle every day. I'd book a <b>same-day</b> diagnostic. Is it a furnace or a heat pump, and is it blowing cold air or nothing at all?";
+    if(/(book|appointment|schedule|visit|come out|send)/.test(q))
+      return "Done — I just need your name, address, and a good callback number, then I'll lock in the soonest slot and <b>text you a confirmation</b>. Ready?";
+    if(/(thanks|thank|great|cool|ok|okay|perfect)/.test(q))
+      return "You bet 🙂 Want me to go ahead and book the visit, or is there anything else I can answer first?";
+    return "Great question — I can help with repairs, new systems, tune-ups, pricing, and booking. Tell me what's going on with your heating or cooling and I'll take it from there.";
+  }
+  function botSay(q){
+    var t=typing();
+    setTimeout(function(){ t.remove(); add(reply(q),'bot'); }, reduce?180:850);
+  }
+  function send(text){
+    add(text.replace(/</g,'&lt;'),'user');
+    botSay(text);
+  }
+  starters.forEach(function(s){
+    var c=document.createElement('button'); c.type='button'; c.className='chip'; c.textContent=s;
+    c.addEventListener('click',function(){ send(s); });
+    chipsBox.appendChild(c);
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault(); var v=input.value.trim(); if(!v) return; input.value=''; send(v);
+  });
+  /* opening line */
+  setTimeout(function(){ add("Hi, I'm Riley with Riverside Heating &amp; Air 👋 What can I help you with — repair, a new system, or a tune-up?",'bot'); }, reduce?0:400);
+
+  /* nav shadow on scroll (subtle) */
+})();
+</script>
+</body>
+</html>

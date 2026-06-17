@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Work — Signalcraft | AI-powered websites for local business</title>
+<meta name="description" content="Real, working websites Signalcraft has built — each hand-crafted to the brand, with a live AI assistant and custom video. See live demos for home services and real estate." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#0C1222; --ink-2:#0A0F1C; --card:#121A2E; --card-2:#161F37;
+  --signal:#F05A28; --signal-glow:rgba(240,90,40,.32);
+  --steel:#8A97AF; --faint:#5B6B85;
+  --paper:#F4F1EC; --hairline:rgba(255,255,255,.08); --hairline-2:rgba(255,255,255,.14);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--ink-2);color:#E8EDF5;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--signal);color:#fff}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.03em;line-height:1.04;font-weight:700}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(620px 480px at 82% -6%,var(--signal-glow),transparent 64%),radial-gradient(560px 520px at -8% 38%,rgba(91,107,133,.16),transparent 60%)}
+main{position:relative;z-index:2}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}}
+
+nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:6px;padding:8px 8px 8px 18px;border-radius:999px;background:rgba(12,18,34,.62);backdrop-filter:blur(20px);border:1px solid var(--hairline-2);box-shadow:0 24px 60px -24px rgba(0,0,0,.7);max-width:calc(100vw - 32px)}
+nav .brand{display:flex;align-items:center;gap:10px;margin-right:14px}
+nav .brand b{font-family:'Space Grotesk';font-weight:700;font-size:16px;letter-spacing:-.02em}
+nav .links{display:flex;gap:2px}
+nav .links a{font-size:13.5px;font-weight:500;color:var(--steel);padding:9px 14px;border-radius:999px;transition:color .4s,background .4s}
+nav .links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+nav .links a.on{color:#fff;background:rgba(240,90,40,.16)}
+.cta-pill{display:inline-flex;align-items:center;gap:10px;background:var(--signal);color:#fff;font-weight:600;font-size:13.5px;padding:9px 9px 9px 18px;border-radius:999px;white-space:nowrap;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.cta-pill .arr{width:26px;height:26px;border-radius:999px;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:13px}
+.cta-pill:hover{transform:translateY(-1px);box-shadow:0 12px 32px -8px var(--signal-glow)}
+.burger{display:none;width:38px;height:38px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--hairline);cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:1.6px;background:#fff;border-radius:2px;transition:transform .6s var(--ease),top .6s var(--ease)}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:22px}
+.burger.open span:nth-child(1){top:18px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){top:18px;transform:rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:55;background:rgba(10,15,28,.92);backdrop-filter:blur(28px);display:flex;flex-direction:column;justify-content:center;padding:0 36px;opacity:0;pointer-events:none;transition:opacity .6s var(--ease)}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet a{font-family:'Space Grotesk';font-size:clamp(30px,8vw,44px);font-weight:700;letter-spacing:-.03em;padding:12px 0;color:#fff;opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.sheet.open a{opacity:1;transform:none}
+.sheet.open a:nth-child(1){transition-delay:.08s}.sheet.open a:nth-child(2){transition-delay:.14s}.sheet.open a:nth-child(3){transition-delay:.2s}.sheet.open a:nth-child(4){transition-delay:.26s}.sheet.open a:nth-child(5){transition-delay:.32s}
+
+.phero{padding:160px 0 60px;text-align:center}
+.k{display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);font-weight:700;margin-bottom:22px}
+.k::before,.k::after{content:"";width:24px;height:1.6px;background:var(--signal)}
+.phero h1{font-size:clamp(38px,5.4vw,66px);color:#fff;max-width:16ch;margin:0 auto}
+.phero h1 .o{color:var(--signal)}
+.phero p{color:var(--steel);font-size:18px;margin:24px auto 0;max-width:54ch}
+
+.section{padding:60px 0}
+.case{display:grid;grid-template-columns:.86fr 1.14fr;gap:40px;align-items:center;margin-bottom:30px}
+.case.flip{grid-template-columns:1.14fr .86fr}
+.case.flip .case-copy{order:2}
+.case-copy .tag{font-family:'Space Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.case-copy h2{font-size:clamp(26px,3vw,38px);color:#fff;margin:12px 0 14px}
+.case-copy p{color:var(--steel);font-size:15.5px;max-width:42ch;margin-bottom:18px}
+.case-copy .pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tagp{font-family:'Space Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);border:1px solid var(--hairline-2);border-radius:99px;padding:5px 12px}
+
+.browser{border-radius:16px;overflow:hidden;border:1px solid var(--hairline-2);background:var(--card);box-shadow:0 50px 110px -50px rgba(0,0,0,.85)}
+.browser .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--hairline)}
+.browser .dot{width:10px;height:10px;border-radius:50%;background:#3a4658}
+.browser .addr{margin-left:10px;font-family:'Space Mono';font-size:11px;color:var(--faint);background:rgba(0,0,0,.25);border-radius:7px;padding:5px 12px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser .frame{position:relative;height:440px;overflow:hidden;background:#0A131C}
+.browser iframe{position:absolute;top:0;left:0;width:166.6%;height:166.6%;border:0;transform:scale(.6);transform-origin:top left;pointer-events:none}
+.browser .open{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:22px;background:linear-gradient(180deg,transparent 62%,rgba(10,15,28,.66));text-decoration:none}
+.browser .open .pill{display:inline-flex;align-items:center;gap:9px;background:var(--signal);color:#fff;font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;box-shadow:0 14px 34px -12px var(--signal-glow);transition:transform .4s var(--ease)}
+.browser:hover .open .pill{transform:translateY(-2px)}
+
+.more{background:var(--paper);color:var(--ink)}
+.more .mh{text-align:center;max-width:620px;margin:0 auto 40px}
+.more .mh .k{color:var(--signal)}
+.more .mh h2{font-size:clamp(26px,3.2vw,40px);color:var(--ink)}
+.more .mh p{color:#5b5b5b;font-size:16px;margin-top:12px}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vcard{background:#fff;border:1px solid rgba(12,18,34,.1);border-radius:16px;padding:24px;transition:transform .3s var(--ease),box-shadow .3s}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(12,18,34,.3)}
+.vcard .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:16px;background:rgba(240,90,40,.12);color:var(--signal-glow)}
+.vcard .ic span{color:var(--signal)}
+.vcard h3{font-size:19px;color:var(--ink);margin-bottom:7px}
+.vcard p{font-size:14px;color:#5b5b5b}
+.vcard .st{display:inline-block;margin-top:14px;font-family:'Space Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);border:1px solid rgba(240,90,40,.3);border-radius:99px;padding:4px 10px}
+
+.cta{padding:90px 0;text-align:center}
+.cta h2{font-size:clamp(28px,3.6vw,46px);color:#fff;max-width:18ch;margin:0 auto 16px}
+.cta p{color:var(--steel);font-size:17px;max-width:46ch;margin:0 auto 28px}
+
+footer{padding:52px 0 40px;border-top:1px solid var(--hairline);position:relative;z-index:2}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center}
+.foot .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700}
+.foot .lk a{color:var(--steel);font-size:14px;margin-left:18px;transition:color .3s}
+.foot .lk a:hover{color:#fff}
+.foot-base{margin-top:26px;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot-base .by b{color:var(--signal)}
+
+@media(max-width:880px){
+  nav .links{display:none}
+  .burger{display:block}
+  nav{left:16px;right:16px;transform:none;width:auto;justify-content:space-between}
+  .case,.case.flip{grid-template-columns:1fr;gap:24px}
+  .case.flip .case-copy{order:0}
+  .vgrid{grid-template-columns:1fr}
+  .browser .frame{height:360px}
+}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;position:fixed;background:var(--signal);color:#fff;padding:10px 16px;border-radius:8px;z-index:200}
+</style>
+</head>
+<body>
+<a href="#work" class="skip">Skip to the work</a>
+<div class="field" aria-hidden="true"></div>
+
+<nav aria-label="Primary">
+  <a class="brand" href="index.html">
+    <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg>
+    <b>Signalcraft</b>
+  </a>
+  <div class="links">
+    <a href="services.html">Services</a>
+    <a href="work.html" class="on">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="cta-pill" href="contact.html">Free audit <span class="arr">↗</span></a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</nav>
+
+<div class="sheet" id="sheet">
+  <a href="services.html">Services</a>
+  <a href="work.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html">Get your free audit</a>
+</div>
+
+<main id="top">
+  <header class="phero">
+    <div class="wrap">
+      <div class="k rv">Concept demos</div>
+      <h1 class="rv d1">See what we build. <span class="o">Live AI inside.</span></h1>
+      <p class="rv d2">These are demonstration sites we designed and built to show what's possible — each hand-crafted, with a working AI assistant you can talk to right now and optional custom video. <b style="color:#B9C4D6;font-weight:600">Sample brands shown for illustration — not real clients.</b></p>
+    </div>
+  </header>
+
+  <section class="section" id="work" aria-label="Portfolio">
+    <div class="wrap">
+
+      <article class="case rv">
+        <div class="case-copy">
+          <div class="tag">Concept demo · Home services / HVAC</div>
+          <h2>Riverside Heating &amp; Air</h2>
+          <p>A concept site showing how an HVAC brand can turn a 9pm "my AC died" panic into a booked job — with an animated comfort gauge, custom video hero, and "Riley," a live AI receptionist that qualifies and books.</p>
+          <div class="pills"><span class="tagp">Custom design</span><span class="tagp">AI chat</span><span class="tagp">Video hero</span><span class="tagp">Booking</span></div>
+        </div>
+        <div class="browser">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">riverside-hvac.example</span></div>
+          <div class="frame">
+            <iframe src="demos/riverside/" title="Live demo: Riverside Heating & Air" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <a class="open" href="demos/riverside/" target="_blank" rel="noopener" aria-label="Open the Riverside demo"><span class="pill">Open live demo →</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case flip rv">
+        <div class="case-copy">
+          <div class="tag">Concept demo · Real estate</div>
+          <h2>Linden &amp; Co. Realty</h2>
+          <p>A concept site showing a bright, editorial luxury look — with an AI-generated home hero, an instant "what's your home worth?" valuation tool, curated listings, and "Morgan," an AI agent that books showings around the clock.</p>
+          <div class="pills"><span class="tagp">Editorial design</span><span class="tagp">AI image hero</span><span class="tagp">Valuation tool</span><span class="tagp">AI chat</span></div>
+        </div>
+        <div class="browser">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">lindenco.example</span></div>
+          <div class="frame">
+            <iframe src="demos/linden/" title="Live demo: Linden & Co. Realty" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <a class="open" href="demos/linden/" target="_blank" rel="noopener" aria-label="Open the Linden & Co. demo"><span class="pill">Open live demo →</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section more" aria-labelledby="more-h">
+    <div class="wrap">
+      <div class="mh">
+        <div class="k">Built for your trade</div>
+        <h2 id="more-h">Whatever you do, we build for it.</h2>
+        <p>Each industry gets its own look and the same AI engine underneath. More live demos rolling out — want yours first?</p>
+      </div>
+      <div class="vgrid">
+        <div class="vcard rv"><div class="ic" aria-hidden="true"><span>🔧</span></div><h3>Plumbing</h3><p>Emergency-first layout with instant dispatch booking and a 24/7 AI line.</p><span class="st">Demo coming soon</span></div>
+        <div class="vcard rv d1"><div class="ic" aria-hidden="true"><span>🦷</span></div><h3>Dental &amp; medical</h3><p>Calm, trustworthy design with new-patient intake and reminder automations.</p><span class="st">Demo coming soon</span></div>
+        <div class="vcard rv d2"><div class="ic" aria-hidden="true"><span>🍽️</span></div><h3>Restaurants</h3><p>Appetite-first visuals, menus, reservations, and an AI host that never misses a call.</p><span class="st">Demo coming soon</span></div>
+        <div class="vcard rv"><div class="ic" aria-hidden="true"><span>💇</span></div><h3>Salons &amp; spas</h3><p>Elegant booking-led design with package upsells and review automation.</p><span class="st">Demo coming soon</span></div>
+        <div class="vcard rv d1"><div class="ic" aria-hidden="true"><span>🚗</span></div><h3>Auto services</h3><p>Trust-and-speed design with quote requests and service scheduling built in.</p><span class="st">Demo coming soon</span></div>
+        <div class="vcard rv d2"><div class="ic" aria-hidden="true"><span>⚖️</span></div><h3>Legal &amp; pro services</h3><p>Authoritative, conversion-focused design with consultation booking + intake.</p><span class="st">Demo coming soon</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h" class="rv">Want one like these for your business?</h2>
+      <p class="rv d1">Start with a free audit. We'll show you exactly what's leaking jobs — then build the site that fixes it.</p>
+      <a class="cta-pill rv d1" href="index.html#audit" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg>
+        Signalcraft
+      </a>
+      <div class="lk">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Free audit</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Signalcraft · Richmond &amp; Chesterfield, VA · Veteran owned</span>
+      <span class="by">Get the message through.</span>
+    </div>
+    <p style="margin-top:16px;font-size:12px;color:var(--faint);max-width:70ch;line-height:1.5">Demonstration concepts created by Signalcraft to showcase our design and AI capabilities. The businesses shown (Riverside Heating &amp; Air, Linden &amp; Co.) are fictional samples for illustration only and are not real clients or affiliated with any actual company of a similar name.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var burger=document.getElementById('burger'),sheet=document.getElementById('sheet');
+  burger.addEventListener('click',function(){burger.classList.toggle('open');sheet.classList.toggle('open');});
+  sheet.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');sheet.classList.remove('open');});});
+})();
+</script>
+<script src="assets/chat.js" defer></script>
+</body>
+</html>
