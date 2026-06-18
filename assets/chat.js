@@ -4,8 +4,9 @@
    One source of truth across every page on the site.
    ===================================================================== */
 (function () {
-  // After deploying the Cloudflare Worker (signalcraft-chat-worker), this is its URL:
-  const WORKER_URL = "https://signalcraft-chat.mrzebedeemiddleton.workers.dev";
+  // After deploying the Cloudflare Worker (signalcraft-chat-worker), this is its URL.
+  // Branded custom domain (DNS in Cloudflare since 2026-06-18); *.workers.dev still works as fallback.
+  const WORKER_URL = "https://api.signalcraft.fyi";
   const WEB3FORMS_KEY = "37fd3bb7-6acd-494d-956e-de52e1b39fd0"; // same inbox as the audit form
   const GREETING = "Hey — I'm Signalcraft's AI assistant. \u{1F44B} Curious whether your business is easy to find online, or want your free presence audit? Ask me anything.";
 
