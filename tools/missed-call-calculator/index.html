@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Missed Call Revenue Calculator for Contractors | Signalcraft</title>
+<meta name="description" content="See exactly how much revenue your home-service business loses to missed calls every month. Free calculator for HVAC, plumbing, roofing, and electrical contractors — then fix it with a 24/7 AI receptionist." />
+<link rel="canonical" href="https://signalcraft.fyi/tools/missed-call-calculator/" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Missed Call Revenue Calculator — Signalcraft" />
+<meta property="og:description" content="How much is voicemail costing your contracting business? Find out in 20 seconds." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://signalcraft.fyi/tools/missed-call-calculator/" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/seo.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Missed Call Revenue Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Signalcraft","url":"https://signalcraft.fyi"},"description":"Calculate the monthly and annual revenue a home-service business loses to missed and unanswered phone calls."}</script>
+<style>
+  .calc-wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  @media(max-width:760px){.calc-grid{grid-template-columns:1fr}}
+  .panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:26px}
+  .panel h2{font-family:'Space Grotesk';font-size:20px;margin:0 0 6px}
+  .panel .hint{color:rgba(255,255,255,.55);font-size:13px;margin:0 0 20px}
+  .field{margin-bottom:20px}
+  .field label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:8px}
+  .field label .val{color:#F05A28;font-family:'Space Mono'}
+  .field input[type=range]{width:100%;accent-color:#F05A28}
+  .field input[type=number]{width:100%;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#fff;padding:11px 13px;font-size:15px;font-family:'Space Mono'}
+  .result{position:sticky;top:18px}
+  .bigfig{font-family:'Space Grotesk';font-weight:700;line-height:1;letter-spacing:-.02em;color:#F05A28;font-size:clamp(40px,7vw,64px);margin:4px 0 2px}
+  .bigfig .pm{font-size:.5em;color:rgba(255,255,255,.5)}
+  .reslabel{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6);font-family:'Space Mono'}
+  .breakdown{margin:22px 0 0;border-top:1px solid rgba(255,255,255,.10);padding-top:18px}
+  .breakdown .row{display:flex;justify-content:space-between;padding:7px 0;font-size:15px}
+  .breakdown .row b{font-family:'Space Mono'}
+  .rescta{margin-top:22px}
+  .callbtn{display:inline-block;margin-top:12px;font-size:14px;color:#fff;border-bottom:1px solid #F05A28;padding-bottom:2px}
+  .disc{color:rgba(255,255,255,.45);font-size:12px;margin-top:18px;line-height:1.5}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="field" aria-hidden="true" style="margin:0"></div>
+<nav aria-label="Primary">
+  <a class="brand" href="/"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg><b>Signalcraft</b></a>
+  <div class="links">
+    <a href="/services.html">Services</a>
+    <a href="/work.html">Work</a>
+    <a href="/ai-receptionist/">AI Receptionist</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+  <a class="cta-pill" href="/contact.html">Free audit <span class="arr">↗</span></a>
+</nav>
+
+<main id="main">
+  <header class="shero">
+    <div class="wrap">
+      <div class="k">Free tool · 20 seconds</div>
+      <h1>How much is voicemail <span class="o">costing your business?</span></h1>
+      <p class="lead">Every missed call is a job your competitor books. Plug in your numbers and see what unanswered calls are really costing your home-service business each month — then hear the fix live at <a href="tel:+18044065307" style="color:#fff;border-bottom:1px solid var(--signal)">(804) 406-5307</a>.</p>
+    </div>
+  </header>
+
+  <section class="sec" style="padding-top:8px">
+    <div class="calc-wrap">
+      <div class="calc-grid">
+        <div class="panel">
+          <h2>Your numbers</h2>
+          <p class="hint">Rough estimates are fine — drag the sliders.</p>
+          <div class="field">
+            <label for="calls">Calls per week <span class="val" id="callsV">40</span></label>
+            <input type="range" id="calls" min="5" max="200" value="40" step="5" />
+          </div>
+          <div class="field">
+            <label for="missed">% of calls you miss <span class="val" id="missedV">25%</span></label>
+            <input type="range" id="missed" min="5" max="70" value="25" step="5" />
+          </div>
+          <div class="field">
+            <label for="value">Average job value <span class="val" id="valueV">$400</span></label>
+            <input type="range" id="value" min="100" max="3000" value="400" step="50" />
+          </div>
+          <div class="field">
+            <label for="close">Of answered leads, % you'd win <span class="val" id="closeV">40%</span></label>
+            <input type="range" id="close" min="10" max="80" value="40" step="5" />
+          </div>
+        </div>
+
+        <div class="panel result">
+          <div class="reslabel">You're losing about</div>
+          <div class="bigfig"><span class="pm">$</span><span id="yearFig">0</span><span class="pm"> / yr</span></div>
+          <div class="reslabel" style="margin-top:4px">to missed calls</div>
+          <div class="breakdown">
+            <div class="row"><span>Missed calls / month</span><b id="mMissed">0</b></div>
+            <div class="row"><span>Lost jobs / month</span><b id="mJobs">0</b></div>
+            <div class="row"><span>Lost revenue / month</span><b id="mRev">$0</b></div>
+          </div>
+          <div class="rescta">
+            <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Stop the leak — free audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+            <a class="callbtn" href="tel:+18044065307">▶ Hear the AI receptionist — (804) 406-5307</a>
+          </div>
+          <p class="disc">Signalcraft's AI receptionist answers every call 24/7, qualifies the caller, and books the job — so this number goes to zero. Estimate only; actual results vary by business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">Turn those missed calls into booked jobs.</h2>
+      <p>Get a free digital-presence audit — we'll show you exactly where leads are leaking and set up your 24/7 AI receptionist if it's a fit.</p>
+      <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="/"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg> Signalcraft</a>
+      <div class="lk">
+        <a href="/services.html">Services</a>
+        <a href="/work.html">Work</a>
+        <a href="/ai-receptionist/">AI Receptionist</a>
+        <a href="/contact.html">Free audit</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Signalcraft · Richmond &amp; Chesterfield, VA · Veteran owned</span>
+      <span class="by"><b>Get the message through.</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ids=["calls","missed","value","close"];
+  var el={}; ids.forEach(function(i){el[i]=document.getElementById(i);el[i+"V"]=document.getElementById(i+"V");});
+  var fmt=function(n){return n.toLocaleString("en-US");};
+  function calc(){
+    var calls=+el.calls.value, missed=+el.missed.value, value=+el.value.value, close=+el.close.value;
+    el.callsV.textContent=calls;
+    el.missedV.textContent=missed+"%";
+    el.valueV.textContent="$"+fmt(value);
+    el.closeV.textContent=close+"%";
+    var missedMo=Math.round(calls*4.33*(missed/100));
+    var lostJobs=Math.round(missedMo*(close/100));
+    var lostRevMo=lostJobs*value;
+    var lostRevYr=lostRevMo*12;
+    document.getElementById("mMissed").textContent=fmt(missedMo);
+    document.getElementById("mJobs").textContent=fmt(lostJobs);
+    document.getElementById("mRev").textContent="$"+fmt(lostRevMo);
+    document.getElementById("yearFig").textContent=fmt(lostRevYr);
+  }
+  ids.forEach(function(i){el[i].addEventListener("input",calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

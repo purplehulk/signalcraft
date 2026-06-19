@@ -344,6 +344,7 @@ ${navHtml()}
       <h1>Never miss another <span class="o">customer call.</span></h1>
       <p class="lead">Signalcraft builds AI receptionists that answer, qualify, and book jobs around the clock for home-service businesses across the Richmond, VA area. <b>Pick your trade and city</b> to see how it works for you — or hear it live at <a href="tel:${DEMO_TEL}" style="color:#fff;border-bottom:1px solid var(--signal)">${DEMO_CALL}</a>.</p>
       <div class="hero-cta"><a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a></div>
+      <p style="margin-top:16px;font-size:14px"><a href="/tools/missed-call-calculator/" style="color:#fff;border-bottom:1px solid var(--signal)">Free tool: see what missed calls cost your business →</a></p>
     </div>
   </header>
   <section class="sec" aria-label="Service pages">
@@ -364,7 +365,7 @@ const hub = buildHub();
 const allUrls = [hub.url, ...pages.map((p) => p.url)];
 
 // sitemap.xml (only the programmatic pages + the static top-level pages, all under one map)
-const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"].map((p) => SITE + p);
+const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/tools/missed-call-calculator/", "/privacy.html", "/terms.html"].map((p) => SITE + p);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${[...STATIC, ...allUrls].map((u) => `  <url><loc>${u}</loc><lastmod>${TODAY}</lastmod></url>`).join("\n")}
