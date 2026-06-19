@@ -18,7 +18,7 @@
   --ease:cubic-bezier(.32,.72,0,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--ink-2);color:#E8EDF5;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--signal);color:#fff}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.03em;line-height:1.04;font-weight:700}
@@ -107,10 +107,9 @@ footer{padding:52px 0 40px;border-top:1px solid var(--hairline);position:relativ
 
 @media(max-width:880px){
   .burger{display:none}
-  nav{left:16px;right:16px;transform:none;width:auto;flex-wrap:wrap;justify-content:space-between}
-  nav .links{order:3;flex-basis:100%;display:flex;overflow-x:auto;gap:4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline);scrollbar-width:none}
-  nav .links::-webkit-scrollbar{display:none}
-  nav .links a{flex:0 0 auto}
+  nav{left:16px;right:16px;transform:none;width:auto;flex-wrap:wrap;justify-content:space-between;padding:8px 10px}
+  nav .links{order:3;flex-basis:100%;display:flex;gap:2px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline)}
+  nav .links a{flex:1 1 0;min-width:0;text-align:center;padding:9px 4px;font-size:12.5px;white-space:nowrap}
   .case,.case.flip{grid-template-columns:1fr;gap:24px}
   .case.flip .case-copy{order:0}
   .vgrid{grid-template-columns:1fr}
