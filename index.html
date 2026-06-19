@@ -276,9 +276,11 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   .stats,.steps{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr}
   .b-a,.b-b,.b-c,.b-d{grid-column:span 1}
-  nav .links{display:none}
-  .burger{display:block}
-  nav{left:16px;right:16px;transform:none;width:auto;justify-content:space-between}
+  .burger{display:none}
+  nav{left:16px;right:16px;transform:none;width:auto;flex-wrap:wrap;justify-content:space-between}
+  nav .links{order:3;flex-basis:100%;display:flex;overflow-x:auto;gap:4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline);scrollbar-width:none}
+  nav .links::-webkit-scrollbar{display:none}
+  nav .links a{flex:0 0 auto}
   section.blk{padding:96px 0}
   .contact .core{padding:34px 26px}
   .wrap{padding:0 20px}
