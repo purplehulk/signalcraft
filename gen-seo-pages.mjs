@@ -90,15 +90,28 @@ const VERTICALS = [
 ];
 
 const CITIES = [
-  { slug: "richmond", name: "Richmond", county: "the City of Richmond", nearby: "the Fan, Church Hill, and the West End" },
-  { slug: "chesterfield", name: "Chesterfield", county: "Chesterfield County", nearby: "Midlothian, Bon Air, and Brandermill" },
-  { slug: "henrico", name: "Henrico", county: "Henrico County", nearby: "Short Pump, Glen Allen, and Highland Springs" },
-  { slug: "midlothian", name: "Midlothian", county: "Chesterfield County", nearby: "Bon Air, Brandermill, and Woodlake" },
-  { slug: "glen-allen", name: "Glen Allen", county: "Henrico County", nearby: "Short Pump, Innsbrook, and the West End" },
-  { slug: "mechanicsville", name: "Mechanicsville", county: "Hanover County", nearby: "Atlee, Hanover, and the Mechanicsville Turnpike corridor" },
-  { slug: "petersburg", name: "Petersburg", county: "the City of Petersburg", nearby: "Colonial Heights, Hopewell, and the Fort Gregg-Adams area" },
-  { slug: "ashland", name: "Ashland", county: "Hanover County", nearby: "Hanover, Glen Allen, and the Route 1 corridor" },
-  { slug: "colonial-heights", name: "Colonial Heights", county: "the City of Colonial Heights", nearby: "Petersburg, Chester, and the Southpark corridor" },
+  { slug: "richmond", name: "Richmond", region: "Greater Richmond", county: "the City of Richmond", nearby: "the Fan, Church Hill, and the West End" },
+  { slug: "chesterfield", name: "Chesterfield", region: "Greater Richmond", county: "Chesterfield County", nearby: "Midlothian, Bon Air, and Brandermill" },
+  { slug: "henrico", name: "Henrico", region: "Greater Richmond", county: "Henrico County", nearby: "Short Pump, Glen Allen, and Highland Springs" },
+  { slug: "midlothian", name: "Midlothian", region: "Greater Richmond", county: "Chesterfield County", nearby: "Bon Air, Brandermill, and Woodlake" },
+  { slug: "glen-allen", name: "Glen Allen", region: "Greater Richmond", county: "Henrico County", nearby: "Short Pump, Innsbrook, and the West End" },
+  { slug: "mechanicsville", name: "Mechanicsville", region: "Greater Richmond", county: "Hanover County", nearby: "Atlee, Hanover, and the Mechanicsville Turnpike corridor" },
+  { slug: "petersburg", name: "Petersburg", region: "Greater Richmond", county: "the City of Petersburg", nearby: "Colonial Heights, Hopewell, and the Fort Gregg-Adams area" },
+  { slug: "ashland", name: "Ashland", region: "Greater Richmond", county: "Hanover County", nearby: "Hanover, Glen Allen, and the Route 1 corridor" },
+  { slug: "colonial-heights", name: "Colonial Heights", region: "Greater Richmond", county: "the City of Colonial Heights", nearby: "Petersburg, Chester, and the Southpark corridor" },
+  { slug: "norfolk", name: "Norfolk", region: "Hampton Roads", county: "the City of Norfolk", nearby: "Ghent, Ocean View, and Downtown Norfolk" },
+  { slug: "virginia-beach", name: "Virginia Beach", region: "Hampton Roads", county: "the City of Virginia Beach", nearby: "the Oceanfront, Town Center, and Kempsville" },
+  { slug: "chesapeake", name: "Chesapeake", region: "Hampton Roads", county: "the City of Chesapeake", nearby: "Greenbrier, Western Branch, and Great Bridge" },
+  { slug: "hampton", name: "Hampton", region: "Hampton Roads", county: "the City of Hampton", nearby: "Phoebus, Buckroe, and Coliseum Central" },
+  { slug: "newport-news", name: "Newport News", region: "Hampton Roads", county: "the City of Newport News", nearby: "City Center, Hilton Village, and Denbigh" },
+  { slug: "portsmouth", name: "Portsmouth", region: "Hampton Roads", county: "the City of Portsmouth", nearby: "Olde Towne, Churchland, and Port Norfolk" },
+  { slug: "suffolk", name: "Suffolk", region: "Hampton Roads", county: "the City of Suffolk", nearby: "Harbour View, North Suffolk, and Driver" },
+  { slug: "roanoke", name: "Roanoke", region: "the Roanoke Valley", county: "the City of Roanoke", nearby: "Salem, Vinton, and Cave Spring" },
+  { slug: "lynchburg", name: "Lynchburg", region: "the Lynchburg area", county: "the City of Lynchburg", nearby: "Forest, Madison Heights, and Boonsboro" },
+  { slug: "harrisonburg", name: "Harrisonburg", region: "the Shenandoah Valley", county: "the City of Harrisonburg", nearby: "Rockingham County, Bridgewater, and Dayton" },
+  { slug: "charlottesville", name: "Charlottesville", region: "the Charlottesville area", county: "the City of Charlottesville", nearby: "Albemarle County, Pantops, and Crozet" },
+  { slug: "fredericksburg", name: "Fredericksburg", region: "the Fredericksburg area", county: "the City of Fredericksburg", nearby: "Spotsylvania, Stafford, and Central Park" },
+  { slug: "williamsburg", name: "Williamsburg", region: "the Historic Triangle", county: "the City of Williamsburg", nearby: "James City County, Yorktown, and Jamestown" },
 ];
 
 // ── shared chrome ───────────────────────────────────────────────────────────
@@ -163,7 +176,7 @@ function buildPage(v, c) {
     { q: `How does an AI receptionist help my ${v.name} business in ${c.name}?`, a: `It answers every call to your ${c.name} ${v.lc} 24/7 in a natural voice, asks the right qualifying questions, books the job on your calendar, and texts or emails you the details instantly. ${v.pain} With Signalcraft, that never happens — even when you're on a job site or asleep.` },
     v.faq,
     { q: `Will callers in ${c.name} know they're talking to an AI?`, a: `Most don't — the receptionist sounds natural and conversational. What ${c.name} homeowners notice is that someone answered on the first ring, knew the right questions to ask, and got them booked. You can hear it yourself: call our live demo line at ${DEMO_CALL}.` },
-    { q: `Do you only cover ${c.name}, or the rest of the Richmond area?`, a: `We serve ${c.name} and ${v.plural} across Greater Richmond — including ${c.nearby}. Every service area gets the same 24/7 AI receptionist, online booking, and missed-call rescue.` },
+    { q: `Do you only cover ${c.name}, or the rest of ${c.region}?`, a: `We serve ${c.name} and ${v.plural} across ${c.region} — including ${c.nearby}. Every service area gets the same 24/7 AI receptionist, online booking, and missed-call rescue.` },
     { q: `What does it cost, and how do we start?`, a: `It starts with a free digital-presence audit — no strings. We show you exactly how many calls and leads your ${v.lc} is currently missing, then set up the AI receptionist if it's a fit. Book your free audit and we'll handle the rest.` },
   ];
 
@@ -171,7 +184,7 @@ function buildPage(v, c) {
   const serviceSchema = {
     "@context": "https://schema.org", "@type": "Service",
     serviceType: `AI Receptionist & 24/7 Call Answering for ${v.name} Businesses`,
-    provider: { "@type": "Organization", name: "Signalcraft", url: SITE, areaServed: "Richmond, VA metro", description: "Veteran-owned, AI-powered marketing studio for local home-service businesses." },
+    provider: { "@type": "Organization", name: "Signalcraft", url: SITE, areaServed: "Virginia", description: "Veteran-owned, AI-powered marketing studio for local home-service businesses." },
     areaServed: { "@type": "City", name: `${c.name}, Virginia` },
     audience: { "@type": "BusinessAudience", name: `${v.name} businesses` },
     url, description: desc,
@@ -280,7 +293,7 @@ ${navHtml()}
 
   <section class="areas" aria-labelledby="areas-h">
     <div class="wrap">
-      <h2 id="areas-h">AI receptionist service across Greater Richmond</h2>
+      <h2 id="areas-h">AI receptionist service across ${c.region}</h2>
       <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}.</p>
       <div class="linkcols">
         <div><h3>${v.name} — other areas</h3><ul>${sameTradeOtherCities}</ul></div>
@@ -309,8 +322,8 @@ ${SCRIPTS}
 // ── hub index ───────────────────────────────────────────────────────────────
 function buildHub() {
   const url = `${SITE}/ai-receptionist/`;
-  const title = `AI Receptionist for Home-Service Businesses in Richmond, VA | Signalcraft`;
-  const desc = `Signalcraft builds 24/7 AI receptionists for HVAC, plumbing, roofing, and electrical businesses across the Richmond, VA area — answering, qualifying, and booking every call. Find your trade and city.`;
+  const title = `AI Receptionist for Home-Service Businesses in Virginia | Signalcraft`;
+  const desc = `Signalcraft builds 24/7 AI receptionists for home-service businesses across Virginia — HVAC, plumbing, roofing, electrical, and more — answering, qualifying, and booking every call. Find your trade and city.`;
   const groups = VERTICALS.map((v) => `
       <div style="margin-bottom:30px">
         <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--signal);margin-bottom:12px;font-family:'Space Mono'">${v.icon} ${v.name}</h3>
@@ -324,7 +337,7 @@ function buildHub() {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}" />
 <link rel="canonical" href="${url}" />
-<meta property="og:title" content="AI Receptionist for Home-Service Businesses — Richmond, VA" />
+<meta property="og:title" content="AI Receptionist for Home-Service Businesses — Virginia" />
 <meta property="og:description" content="${esc(desc)}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${url}" />
@@ -340,9 +353,9 @@ ${navHtml()}
 <main id="main">
   <header class="shero">
     <div class="wrap">
-      <div class="k">24/7 AI Receptionist · Richmond, VA</div>
+      <div class="k">24/7 AI Receptionist · Virginia</div>
       <h1>Never miss another <span class="o">customer call.</span></h1>
-      <p class="lead">Signalcraft builds AI receptionists that answer, qualify, and book jobs around the clock for home-service businesses across the Richmond, VA area. <b>Pick your trade and city</b> to see how it works for you — or hear it live at <a href="tel:${DEMO_TEL}" style="color:#fff;border-bottom:1px solid var(--signal)">${DEMO_CALL}</a>.</p>
+      <p class="lead">Signalcraft builds AI receptionists that answer, qualify, and book jobs around the clock for home-service businesses across Virginia. <b>Pick your trade and city</b> to see how it works for you — or hear it live at <a href="tel:${DEMO_TEL}" style="color:#fff;border-bottom:1px solid var(--signal)">${DEMO_CALL}</a>.</p>
       <div class="hero-cta"><a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a></div>
       <p style="margin-top:16px;font-size:14px"><a href="/tools/missed-call-calculator/" style="color:#fff;border-bottom:1px solid var(--signal)">Free tool: see what missed calls cost your business →</a></p>
     </div>
