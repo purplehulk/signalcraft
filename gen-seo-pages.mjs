@@ -55,6 +55,38 @@ const VERTICALS = [
     stat: { n: "60%+", p: "of homeowners won't leave a voicemail — they just call the next electrician" },
     faq: { q: "Will it treat a sparking panel or outage as urgent?", a: "Absolutely. Safety-related calls are flagged as priority, the caller gets clear next steps, and the job is booked or escalated to your on-call electrician right away." },
   },
+  {
+    slug: "appliance-repair", name: "Appliance Repair", trade: "appliance repair", plural: "appliance repair companies", lc: "appliance repair business", icon: "🔧",
+    emergency: "a dead refrigerator full of groceries, or a washer that just flooded the laundry room",
+    pain: "When the fridge dies, homeowners want it fixed today — they'll call down the list until someone actually answers.",
+    services: ["emergency no-cool fridge & freezer calls", "washer, dryer & dishwasher repairs", "diagnostic and repair scheduling", "parts, brand, and warranty questions"],
+    stat: { n: "70%+", p: "of appliance-repair calls are same-day-urgent jobs the caller won't leave on voicemail" },
+    faq: { q: "Can it book same-day appliance repair jobs?", a: "Yes. It captures the appliance type, brand, and symptom, gauges urgency (a dead fridge vs. a noisy dryer), and books the soonest slot — or routes the truly urgent jobs straight to you." },
+  },
+  {
+    slug: "garage-door", name: "Garage Door", trade: "garage door", plural: "garage door companies", lc: "garage door business", icon: "🚪",
+    emergency: "a door stuck open overnight leaving the house exposed, or a snapped spring trapping a car inside",
+    pain: "A garage door stuck open is a security problem — homeowners keep calling until a human answers.",
+    services: ["emergency stuck & broken-door calls", "spring, opener & cable repairs", "new door installation quotes", "tune-up and maintenance scheduling"],
+    stat: { n: "50%+", p: "of garage-door calls are urgent repairs the caller needs handled the same day" },
+    faq: { q: "Will it treat a stuck or broken door as urgent?", a: "Yes. A door stuck open or a snapped spring is flagged as priority — the receptionist captures the details and books the soonest repair, or escalates straight to your on-call tech." },
+  },
+  {
+    slug: "pest-control", name: "Pest Control", trade: "pest control", plural: "pest control companies", lc: "pest control business", icon: "🐜",
+    emergency: "a wasp nest by the front door, or a sudden roach or rodent sighting a homeowner wants gone now",
+    pain: "Pests are an emotional, urgent call — if you don't pick up, they call the next exterminator the same minute.",
+    services: ["urgent infestation & stinging-insect calls", "recurring treatment scheduling", "inspection and quote requests", "termite and wildlife job intake"],
+    stat: { n: "65%+", p: "of pest-control calls are urgent — the caller wants it handled today, not next week" },
+    faq: { q: "Can it handle urgent infestation calls?", a: "Yes. It identifies the pest and the urgency, captures the address, and books the soonest treatment — flagging stinging-insect and emergency calls straight to you." },
+  },
+  {
+    slug: "landscaping", name: "Landscaping", trade: "landscaping", plural: "landscaping companies", lc: "landscaping business", icon: "🌳",
+    emergency: "a storm-downed limb, a busted irrigation line, or a last-minute request before a weekend event",
+    pain: "Landscaping leads are seasonal and fiercely competitive — the company that answers first books the estimate.",
+    services: ["new estimate & design consultations", "recurring maintenance scheduling", "irrigation, hardscape & cleanup jobs", "seasonal and storm-cleanup requests"],
+    stat: { n: "3x", p: "the inbound leads in spring — but only for the crew that answers while they're out mowing" },
+    faq: { q: "Can it book estimates while my crew is out in the field?", a: "That's the whole point. While you're on a mower or a job, it answers every call, captures the property details and scope, and books the estimate before the lead calls a competitor." },
+  },
 ];
 
 const CITIES = [
@@ -64,6 +96,9 @@ const CITIES = [
   { slug: "midlothian", name: "Midlothian", county: "Chesterfield County", nearby: "Bon Air, Brandermill, and Woodlake" },
   { slug: "glen-allen", name: "Glen Allen", county: "Henrico County", nearby: "Short Pump, Innsbrook, and the West End" },
   { slug: "mechanicsville", name: "Mechanicsville", county: "Hanover County", nearby: "Atlee, Hanover, and the Mechanicsville Turnpike corridor" },
+  { slug: "petersburg", name: "Petersburg", county: "the City of Petersburg", nearby: "Colonial Heights, Hopewell, and the Fort Gregg-Adams area" },
+  { slug: "ashland", name: "Ashland", county: "Hanover County", nearby: "Hanover, Glen Allen, and the Route 1 corridor" },
+  { slug: "colonial-heights", name: "Colonial Heights", county: "the City of Colonial Heights", nearby: "Petersburg, Chester, and the Southpark corridor" },
 ];
 
 // ── shared chrome ───────────────────────────────────────────────────────────
