@@ -302,6 +302,22 @@ ${navHtml()}
     </div>
   </section>
 
+  <section class="aeo-sec" aria-labelledby="aeo-h">
+    <div class="wrap">
+      <div class="aeo-band">
+        <div class="tag">New</div>
+        <h2 id="aeo-h">Get your ${v.lc} recommended by <span class="o">ChatGPT &amp; Google AI.</span></h2>
+        <p>More ${c.name} customers now ask AI "who's the best ${v.lc} near me?" instead of scrolling Google. We make your business one the AI actually names — structured data, machine-readable service facts, and the trust signals ChatGPT, Gemini, and Google's AI answers look for.</p>
+        <div class="nums">
+          <div><b>45%</b><span>of local searches now use AI</span></div>
+          <div><b>1.2%</b><span>of businesses ever get cited</span></div>
+          <div><b>1st</b><span>-mover while rivals sleep</span></div>
+        </div>
+        <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">See if AI recommends you <span class="arr" style="width:30px;height:30px">↗</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="cta" aria-labelledby="cta-h">
     <div class="wrap">
       <h2 id="cta-h">See how many calls your ${v.lc} is missing.</h2>
