@@ -114,6 +114,43 @@ const CITIES = [
   { slug: "williamsburg", name: "Williamsburg", region: "the Historic Triangle", county: "the City of Williamsburg", nearby: "James City County, Yorktown, and Jamestown" },
 ];
 
+// ── web-design silo content (keyed by trade slug; [City] is replaced per page) ──
+const WEB = {
+  "hvac": { webLead: "built to win the no-cool call in a July heat wave — instant click-to-call, financing and quote forms, and a maintenance-plan signup that turns one job into a recurring customer.",
+    needs: ["Instant click-to-call + an emergency 'no-cool / no-heat' banner", "Online quote and financing-application forms", "Maintenance-plan signup that builds recurring revenue"],
+    stat: { n: "75%", p: "of homeowners check your website before booking an HVAC visit — a dated site sends them to the next company" },
+    webFaq: { q: "Will my HVAC site capture financing and quote requests?", a: "Yes. We build quote and financing-application forms into the site, plus a one-tap emergency call button, so a [City] homeowner in a heat wave books you instead of scrolling on." } },
+  "plumbing": { webLead: "built so a burst-pipe emergency becomes a booked job — one-tap calling, urgent-vs-routine intake, and a site fast enough to load when someone's standing in two inches of water.",
+    needs: ["A one-tap emergency call button, above the fold", "Urgent-vs-routine request intake", "Service & pricing pages for drains, water heaters, and repairs"],
+    stat: { n: "1 in 4", p: "plumbing searches are emergencies — they hire whoever's site loads fast and shows a phone number first" },
+    webFaq: { q: "Can the site handle emergency plumbing leads?", a: "That's the point. The emergency call button sits above the fold, the form triages urgent vs. routine, and the site loads in under two seconds — so [City] homeowners reach you first." } },
+  "roofing": { webLead: "built to capture storm-damage leads the morning after a Virginia thunderstorm — photo galleries, insurance-claim intake, and click-to-call front and center.",
+    needs: ["A storm-damage lead form with insurance-claim intake", "Before/after roof photo galleries", "One-tap free-inspection booking"],
+    stat: { n: "2x", p: "the leads after a storm — but only for the roofer whose site is found and answers first" },
+    webFaq: { q: "Can the site capture storm and insurance leads?", a: "Yes. The storm-damage form collects the address, damage, and insurance details, books the free inspection, and notifies you instantly — so you reach high-intent [City] storm leads before competitors." } },
+  "electrical": { webLead: "built to earn a safety-conscious homeowner's trust fast — clear service pages (panels, rewiring, EV chargers), license and credential proof, and one-tap calling for hazards.",
+    needs: ["Safety-forward service pages (panels, rewiring, EV chargers)", "License & credential trust signals up front", "One-tap emergency call for sparking panels and hazards"],
+    stat: { n: "60%+", p: "of homeowners judge an electrician's trustworthiness by their website before they ever call" },
+    webFaq: { q: "Will the site show I'm licensed and trustworthy?", a: "Yes. We surface your license, insurance, and reviews prominently, with clear service pages and a one-tap call button — the trust signals [City] homeowners look for before letting an electrician in." } },
+  "appliance-repair": { webLead: "built to book the same-day fridge or washer repair — brand/symptom intake, transparent service-call info, and a site that ranks when someone searches at 8am with a dead refrigerator.",
+    needs: ["A brand & symptom intake form", "Same-day booking with clear service-call info", "Brand/warranty service pages for search"],
+    stat: { n: "70%+", p: "of appliance-repair jobs are same-day — the caller books whoever's site is found and answers first" },
+    webFaq: { q: "Can customers book a repair right from the site?", a: "Yes. The intake form captures the appliance, brand, and symptom, gauges urgency, and books the soonest slot — so [City] homeowners with a dead fridge book you today, not next week." } },
+  "garage-door": { webLead: "built to turn a stuck-door emergency into a booked repair — a visual door style-picker for new installs, instant calling, and galleries that sell the upgrade.",
+    needs: ["A visual garage-door style & quote picker", "A stuck/broken-door emergency call button", "Install galleries that sell upgrades"],
+    stat: { n: "50%+", p: "of garage-door buyers shop the look online first — a visual site wins the install job" },
+    webFaq: { q: "Can the site help sell new installs?", a: "Yes. The visual style-picker and install galleries let [City] homeowners see the upgrade and request a quote, plus an emergency button for stuck-door repairs." } },
+  "pest-control": { webLead: "built to convert an urgent 'get-it-gone-now' search — pest-specific landing pages, recurring-plan signup, and instant calling for wasp nests and infestations.",
+    needs: ["Pest-specific landing pages (termites, rodents, stinging insects)", "A recurring treatment-plan signup", "Instant call + urgent infestation intake"],
+    stat: { n: "65%+", p: "of pest-control searches are urgent — they hire the first credible site that loads" },
+    webFaq: { q: "Can the site sell recurring treatment plans?", a: "Yes. We build a plan-signup flow plus pest-specific pages that rank, so [City] homeowners book a one-time treatment and convert to recurring revenue." } },
+  "landscaping": { webLead: "built to sell the transformation — before/after portfolios, seasonal service pages, and estimate booking that fills your calendar in spring.",
+    needs: ["Before/after project portfolio galleries", "Seasonal service & maintenance-plan pages", "Estimate-request booking"],
+    stat: { n: "3x", p: "the leads in spring — captured by the landscaper whose portfolio site is found first" },
+    webFaq: { q: "Will the site show off my past work?", a: "Yes. We build before/after portfolio galleries and estimate booking, so [City] homeowners see the transformation and request a quote before calling a competitor." } },
+};
+for (const v of VERTICALS) v.web = WEB[v.slug];
+
 // ── shared chrome ───────────────────────────────────────────────────────────
 const LOGO = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg>`;
 const ICON = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E`;
