@@ -114,6 +114,43 @@ const CITIES = [
   { slug: "williamsburg", name: "Williamsburg", region: "the Historic Triangle", county: "the City of Williamsburg", nearby: "James City County, Yorktown, and Jamestown" },
 ];
 
+// ── web-design silo content (keyed by trade slug; [City] is replaced per page) ──
+const WEB = {
+  "hvac": { webLead: "built to win the no-cool call in a July heat wave — instant click-to-call, financing and quote forms, and a maintenance-plan signup that turns one job into a recurring customer.",
+    needs: ["Instant click-to-call + an emergency 'no-cool / no-heat' banner", "Online quote and financing-application forms", "Maintenance-plan signup that builds recurring revenue"],
+    stat: { n: "75%", p: "of homeowners check your website before booking an HVAC visit — a dated site sends them to the next company" },
+    webFaq: { q: "Will my HVAC site capture financing and quote requests?", a: "Yes. We build quote and financing-application forms into the site, plus a one-tap emergency call button, so a [City] homeowner in a heat wave books you instead of scrolling on." } },
+  "plumbing": { webLead: "built so a burst-pipe emergency becomes a booked job — one-tap calling, urgent-vs-routine intake, and a site fast enough to load when someone's standing in two inches of water.",
+    needs: ["A one-tap emergency call button, above the fold", "Urgent-vs-routine request intake", "Service & pricing pages for drains, water heaters, and repairs"],
+    stat: { n: "1 in 4", p: "plumbing searches are emergencies — they hire whoever's site loads fast and shows a phone number first" },
+    webFaq: { q: "Can the site handle emergency plumbing leads?", a: "That's the point. The emergency call button sits above the fold, the form triages urgent vs. routine, and the site loads in under two seconds — so [City] homeowners reach you first." } },
+  "roofing": { webLead: "built to capture storm-damage leads the morning after a Virginia thunderstorm — photo galleries, insurance-claim intake, and click-to-call front and center.",
+    needs: ["A storm-damage lead form with insurance-claim intake", "Before/after roof photo galleries", "One-tap free-inspection booking"],
+    stat: { n: "2x", p: "the leads after a storm — but only for the roofer whose site is found and answers first" },
+    webFaq: { q: "Can the site capture storm and insurance leads?", a: "Yes. The storm-damage form collects the address, damage, and insurance details, books the free inspection, and notifies you instantly — so you reach high-intent [City] storm leads before competitors." } },
+  "electrical": { webLead: "built to earn a safety-conscious homeowner's trust fast — clear service pages (panels, rewiring, EV chargers), license and credential proof, and one-tap calling for hazards.",
+    needs: ["Safety-forward service pages (panels, rewiring, EV chargers)", "License & credential trust signals up front", "One-tap emergency call for sparking panels and hazards"],
+    stat: { n: "60%+", p: "of homeowners judge an electrician's trustworthiness by their website before they ever call" },
+    webFaq: { q: "Will the site show I'm licensed and trustworthy?", a: "Yes. We surface your license, insurance, and reviews prominently, with clear service pages and a one-tap call button — the trust signals [City] homeowners look for before letting an electrician in." } },
+  "appliance-repair": { webLead: "built to book the same-day fridge or washer repair — brand/symptom intake, transparent service-call info, and a site that ranks when someone searches at 8am with a dead refrigerator.",
+    needs: ["A brand & symptom intake form", "Same-day booking with clear service-call info", "Brand/warranty service pages for search"],
+    stat: { n: "70%+", p: "of appliance-repair jobs are same-day — the caller books whoever's site is found and answers first" },
+    webFaq: { q: "Can customers book a repair right from the site?", a: "Yes. The intake form captures the appliance, brand, and symptom, gauges urgency, and books the soonest slot — so [City] homeowners with a dead fridge book you today, not next week." } },
+  "garage-door": { webLead: "built to turn a stuck-door emergency into a booked repair — a visual door style-picker for new installs, instant calling, and galleries that sell the upgrade.",
+    needs: ["A visual garage-door style & quote picker", "A stuck/broken-door emergency call button", "Install galleries that sell upgrades"],
+    stat: { n: "50%+", p: "of garage-door buyers shop the look online first — a visual site wins the install job" },
+    webFaq: { q: "Can the site help sell new installs?", a: "Yes. The visual style-picker and install galleries let [City] homeowners see the upgrade and request a quote, plus an emergency button for stuck-door repairs." } },
+  "pest-control": { webLead: "built to convert an urgent 'get-it-gone-now' search — pest-specific landing pages, recurring-plan signup, and instant calling for wasp nests and infestations.",
+    needs: ["Pest-specific landing pages (termites, rodents, stinging insects)", "A recurring treatment-plan signup", "Instant call + urgent infestation intake"],
+    stat: { n: "65%+", p: "of pest-control searches are urgent — they hire the first credible site that loads" },
+    webFaq: { q: "Can the site sell recurring treatment plans?", a: "Yes. We build a plan-signup flow plus pest-specific pages that rank, so [City] homeowners book a one-time treatment and convert to recurring revenue." } },
+  "landscaping": { webLead: "built to sell the transformation — before/after portfolios, seasonal service pages, and estimate booking that fills your calendar in spring.",
+    needs: ["Before/after project portfolio galleries", "Seasonal service & maintenance-plan pages", "Estimate-request booking"],
+    stat: { n: "3x", p: "the leads in spring — captured by the landscaper whose portfolio site is found first" },
+    webFaq: { q: "Will the site show off my past work?", a: "Yes. We build before/after portfolio galleries and estimate booking, so [City] homeowners see the transformation and request a quote before calling a competitor." } },
+};
+for (const v of VERTICALS) v.web = WEB[v.slug];
+
 // ── shared chrome ───────────────────────────────────────────────────────────
 const LOGO = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg>`;
 const ICON = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E`;
@@ -126,6 +163,7 @@ function navHtml() {
     <a href="/services.html">Services</a>
     <a href="/work.html">Work</a>
     <a href="/ai-receptionist/">AI Receptionist</a>
+    <a href="/web-design/">Web Design</a>
     <a href="/contact.html">Contact</a>
   </div>
   <a class="cta-pill" href="/contact.html">Free audit <span class="arr">↗</span></a>
@@ -135,6 +173,7 @@ function navHtml() {
   <a href="/services.html">Services</a>
   <a href="/work.html">Work</a>
   <a href="/ai-receptionist/">AI Receptionist</a>
+  <a href="/web-design/">Web Design</a>
   <a href="/contact.html">Contact</a>
   <a href="/contact.html">Get your free audit</a>
 </div>`;
@@ -148,6 +187,7 @@ function footerHtml() {
         <a href="/services.html">Services</a>
         <a href="/work.html">Work</a>
         <a href="/ai-receptionist/">AI Receptionist</a>
+        <a href="/web-design/">Web Design</a>
         <a href="/contact.html">Free audit</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -294,7 +334,7 @@ ${navHtml()}
   <section class="areas" aria-labelledby="areas-h">
     <div class="wrap">
       <h2 id="areas-h">AI receptionist service across ${c.region}</h2>
-      <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}.</p>
+      <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}. Need a website that books jobs too? <a href="/web-design/${v.slug}-${c.slug}/" style="color:#fff;border-bottom:1px solid var(--signal)">See ${v.name} web design in ${c.name} →</a></p>
       <div class="linkcols">
         <div><h3>${v.name} — other areas</h3><ul>${sameTradeOtherCities}</ul></div>
         <div><h3>Other trades in ${c.name}</h3><ul>${otherTradesThisCity}</ul></div>
@@ -333,6 +373,160 @@ ${SCRIPTS}
 </body>
 </html>`;
   return { url, title, dir: join(__dirname, "ai-receptionist", `${v.slug}-${c.slug}`), html: body };
+}
+
+// ── web-design page builder ─────────────────────────────────────────────────
+function buildWebPage(v, c) {
+  const fill = (s) => String(s).replace(/\[City\]/g, c.name);
+  const url = `${SITE}/web-design/${v.slug}-${c.slug}/`;
+  const title = `Web Design for ${v.name} in ${c.name}, VA | Websites That Book Jobs — Signalcraft`;
+  const desc = `Affordable ${v.name} web design in ${c.name}, VA. Signalcraft builds alive, AI-powered websites that book jobs — from $149/mo, done-for-you, live in days. Free audit.`;
+  const h1 = `${v.name} Web Design in <span class="o">${c.name}, VA</span>`;
+
+  const faqs = [
+    { q: `How much does a ${v.name} website cost in ${c.name}?`, a: `Our Go Live plan starts at $149/mo with $0 founding setup — no big agency invoice up front. It includes the build, a live AI chat assistant, hosting, SSL, and monthly care. Every ${v.lc} is different, so custom quotes are always welcome.` },
+    { q: `How long until my ${v.name.toLowerCase()} site is live?`, a: `Days, not months. We build with AI-grade speed and a done-for-you process, so most ${c.name} ${v.plural} are live within a week of the kickoff audit.` },
+    { q: `Do I own it? Who handles hosting and updates?`, a: `The site is built for your brand and your business. Hosting, SSL, and monthly updates are included so it never goes stale — no plugins to babysit, no surprise renewal bills.` },
+    { q: `Will it actually rank in ${c.name}?`, a: `Yes — local SEO is baked in, built on what Google rewards now, plus AEO: we structure the site so ChatGPT and Google AI can name your ${v.lc} when ${c.name} customers ask "who's the best near me?"` },
+    { q: v.web.webFaq.q, a: fill(v.web.webFaq.a) },
+  ];
+
+  const serviceSchema = { "@context": "https://schema.org", "@type": "Service",
+    serviceType: `Website Design & Development for ${v.name} Businesses`,
+    provider: { "@type": "Organization", name: "Signalcraft", url: SITE, areaServed: "Virginia", description: "Veteran-owned, AI-powered marketing studio for local home-service businesses." },
+    areaServed: { "@type": "City", name: `${c.name}, Virginia` },
+    audience: { "@type": "BusinessAudience", name: `${v.name} businesses` },
+    url, description: desc };
+  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const breadcrumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE + "/" },
+    { "@type": "ListItem", position: 2, name: "Web Design", item: SITE + "/web-design/" },
+    { "@type": "ListItem", position: 3, name: `${v.name} in ${c.name}, VA`, item: url } ] };
+
+  const sameTradeOtherCities = CITIES.filter((x) => x.slug !== c.slug)
+    .map((x) => `<li><a href="/web-design/${v.slug}-${x.slug}/">${v.name} — ${x.name}, VA</a></li>`).join("");
+  const otherTradesThisCity = VERTICALS.filter((x) => x.slug !== v.slug)
+    .map((x) => `<li><a href="/web-design/${x.slug}-${c.slug}/">${x.name} — ${c.name}, VA</a></li>`).join("");
+
+  // 3 trade-specific need cards + 3 universal cards
+  const needCards = v.web.needs.map((n) => ({ ico: v.icon, h: n, p: "" }));
+  const featCards = [
+    ...needCards,
+    { ico: "💬", h: "A live AI assistant, built in", p: `Answers visitors and captures every lead 24/7 — so a ${c.name} homeowner who lands at 9pm becomes tomorrow's booked job.` },
+    { ico: "📈", h: "Local SEO baked in", p: `Built to surface when ${c.name} neighbors search — on what Google rewards now, including AI search results.` },
+    { ico: "⚡", h: "Fast, mobile-first & hosted", p: `Loads in under two seconds on a phone; hosting, SSL, and monthly care handled by us.` },
+  ];
+
+  const body = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${url}" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="${esc(`${v.name} Web Design in ${c.name}, VA — Signalcraft`)}" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="${url}" />
+<link rel="icon" type="image/svg+xml" href="${ICON}" />
+${FONTS}
+<link rel="stylesheet" href="/assets/seo.css" />
+<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="field" aria-hidden="true"></div>
+${navHtml()}
+<div class="crumb"><div class="wrap"><a href="/">Home</a> › <a href="/web-design/">Web Design</a> › ${v.name} in ${c.name}, VA</div></div>
+<main id="main">
+  <header class="shero">
+    <div class="wrap">
+      <div class="k">Web Design · ${c.name}, VA</div>
+      <h1>${h1}</h1>
+      <p class="lead">Most ${v.lc} websites are stale brochures. Yours will be <b>alive</b> — ${fill(v.web.webLead)} Done-for-you by <b>Signalcraft</b>, live in days, from <b>$149/mo</b>.</p>
+      <div class="hero-cta">
+        <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+        <a class="callbtn" href="/#pricing">See Go Live · $149/mo →</a>
+      </div>
+    </div>
+  </header>
+  <section class="band" aria-label="Why it matters">
+    <div class="wrap"><div class="grid">
+      <div class="stat"><div class="n">${v.web.stat.n}</div><p>${v.web.stat.p}.</p></div>
+      <div class="stat"><div class="n">$149/mo</div><p>to go live — $0 founding setup, no big agency invoice.</p></div>
+      <div class="stat"><div class="n">Days</div><p>from kickoff to live, not the months an agency takes.</p></div>
+    </div></div>
+  </section>
+  <section class="sec" aria-labelledby="needs-h">
+    <div class="wrap">
+      <div class="k">What a ${v.name} website needs in ${c.name}</div>
+      <h2 id="needs-h">A site that books jobs — not a brochure that sits there.</h2>
+      <div class="feat">
+        ${featCards.map((f) => `<div class="c"><div class="ico" aria-hidden="true">${f.ico}</div><h3>${f.h}</h3>${f.p ? `<p>${f.p}</p>` : ""}</div>`).join("\n        ")}
+      </div>
+    </div>
+  </section>
+  <section class="sec" aria-labelledby="steps-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="k">How it works</div>
+      <h2 id="steps-h">From dated site to booked jobs — in days.</h2>
+      <div class="steps">
+        <div class="st"><b>/01</b><h3>Free audit</h3><p>We show exactly where ${c.name} jobs are leaking from your current site and search presence.</p></div>
+        <div class="st"><b>/02</b><h3>We build it</h3><p>A hand-built, alive site with your brand, motion, and a live AI assistant — in days. <a href="/demos/riverside/" style="color:#fff;border-bottom:1px solid var(--signal)">See a site we built →</a></p></div>
+        <div class="st"><b>/03</b><h3>Live &amp; handled</h3><p>We host it, maintain it, and keep it ranking — from $149/mo, nothing for you to babysit.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec faq" aria-labelledby="faq-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="k">Questions</div>
+      <h2 id="faq-h">${v.name} web design FAQ — ${c.name}, VA</h2>
+      ${faqs.map((f) => `<details><summary>${esc(f.q)}</summary><p>${f.a}</p></details>`).join("\n      ")}
+    </div>
+  </section>
+  <section class="areas" aria-labelledby="areas-h">
+    <div class="wrap">
+      <h2 id="areas-h">${v.name} web design across ${c.region}</h2>
+      <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}. Also losing after-hours calls? <a href="/ai-receptionist/${v.slug}-${c.slug}/" style="color:#fff;border-bottom:1px solid var(--signal)">See AI Receptionist for ${v.name} in ${c.name} →</a></p>
+      <div class="linkcols">
+        <div><h3>${v.name} web design — other areas</h3><ul>${sameTradeOtherCities}</ul></div>
+        <div><h3>Other trades in ${c.name}</h3><ul>${otherTradesThisCity}</ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="aeo-sec" aria-labelledby="aeo-h">
+    <div class="wrap">
+      <div class="aeo-band">
+        <div class="tag">New</div>
+        <h2 id="aeo-h">Get your ${v.lc} recommended by <span class="o">ChatGPT &amp; Google AI.</span></h2>
+        <p>More ${c.name} customers ask AI "who's the best ${v.lc} near me?" instead of scrolling Google. We build your site so ChatGPT, Gemini, and Google's AI can name you — structured data, machine-readable service facts, and the trust signals they look for.</p>
+        <div class="nums">
+          <div><b>45%</b><span>of local searches now use AI</span></div>
+          <div><b>1.2%</b><span>of businesses ever get cited</span></div>
+          <div><b>1st</b><span>-mover while rivals sleep</span></div>
+        </div>
+        <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">See if AI recommends you <span class="arr" style="width:30px;height:30px">↗</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">Get a ${v.name.toLowerCase()} website that books jobs in ${c.name}.</h2>
+      <p>Start with a free digital-presence audit — we'll show you exactly where ${c.name} jobs are leaking, then build your alive, AI-powered site from $149/mo if it's a fit.</p>
+      <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+      <p style="margin-top:18px;font-size:14px"><a href="/demos/riverside/" style="color:#fff;border-bottom:1px solid var(--signal)">Or see a live site we built →</a></p>
+    </div>
+  </section>
+</main>
+${footerHtml()}
+${SCRIPTS}
+</body>
+</html>`;
+  return { url, title, dir: join(__dirname, "web-design", `${v.slug}-${c.slug}`), html: body };
 }
 
 // ── hub index ───────────────────────────────────────────────────────────────
@@ -387,11 +581,65 @@ ${SCRIPTS}
   return { url, dir: join(__dirname, "ai-receptionist"), html };
 }
 
+// ── web-design hub ───────────────────────────────────────────────────────────
+function buildWebHub() {
+  const url = `${SITE}/web-design/`;
+  const title = `Web Design for Home-Service Businesses in Virginia | Signalcraft`;
+  const desc = `Affordable, AI-powered web design for home-service businesses across Virginia — HVAC, plumbing, roofing, electrical, and more. Sites that book jobs, from $149/mo. Find your trade and city.`;
+  const groups = VERTICALS.map((v) => `
+      <div style="margin-bottom:30px">
+        <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--signal);margin-bottom:12px;font-family:'Space Mono'">${v.icon} ${v.name}</h3>
+        <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:8px">${CITIES.map((c) => `<li><a href="/web-design/${v.slug}-${c.slug}/">${v.name} — ${c.name}, VA</a></li>`).join("")}</ul>
+      </div>`).join("");
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:title" content="Web Design for Home-Service Businesses — Virginia" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="${url}" />
+<link rel="icon" type="image/svg+xml" href="${ICON}" />
+${FONTS}
+<link rel="stylesheet" href="/assets/seo.css" />
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="field" aria-hidden="true"></div>
+${navHtml()}
+<div class="crumb"><div class="wrap"><a href="/">Home</a> › Web Design</div></div>
+<main id="main">
+  <header class="shero">
+    <div class="wrap">
+      <div class="k">Web Design · Virginia</div>
+      <h1>Websites that <span class="o">book jobs.</span></h1>
+      <p class="lead">Signalcraft builds alive, AI-powered websites for home-service businesses across Virginia — from <b>$149/mo</b>, done-for-you, live in days. <b>Pick your trade and city</b> to see how it works for you.</p>
+      <div class="hero-cta"><a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a><a class="callbtn" href="/#pricing">See Go Live · $149/mo →</a></div>
+    </div>
+  </header>
+  <section class="sec" aria-label="Service pages">
+    <div class="wrap">${groups}</div>
+  </section>
+</main>
+${footerHtml()}
+${SCRIPTS}
+</body>
+</html>`;
+  return { url, dir: join(__dirname, "web-design"), html };
+}
+
 // ── run ───────────────────────────────────────────────────────────────────────
 const pages = [];
 for (const v of VERTICALS) for (const c of CITIES) pages.push(buildPage(v, c));
 const hub = buildHub();
-const allUrls = [hub.url, ...pages.map((p) => p.url)];
+const webPages = [];
+for (const v of VERTICALS) for (const c of CITIES) webPages.push(buildWebPage(v, c));
+const webHub = buildWebHub();
+const allUrls = [hub.url, ...pages.map((p) => p.url), webHub.url, ...webPages.map((p) => p.url)];
 
 // sitemap.xml (only the programmatic pages + the static top-level pages, all under one map)
 const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/tools/missed-call-calculator/", "/tools/instant-audit/", "/privacy.html", "/terms.html"].map((p) => SITE + p);
@@ -407,9 +655,11 @@ Sitemap: ${SITE}/sitemap.xml
 `;
 
 if (DRY) {
-  console.log(`[dry-run] would write ${pages.length} pages + hub + sitemap.xml + robots.txt:`);
+  console.log(`[dry-run] would write ${pages.length} receptionist + ${webPages.length} web-design pages + 2 hubs + sitemap.xml + robots.txt:`);
   console.log("  " + hub.url);
   for (const p of pages) console.log("  " + p.url);
+  console.log("  " + webHub.url);
+  for (const p of webPages) console.log("  " + p.url);
   process.exit(0);
 }
 
@@ -419,11 +669,13 @@ function write(dir, html) {
 }
 write(hub.dir, hub.html);
 for (const p of pages) write(p.dir, p.html);
+write(webHub.dir, webHub.html);
+for (const p of webPages) write(p.dir, p.html);
 writeFileSync(join(__dirname, "sitemap.xml"), sitemap);
 writeFileSync(join(__dirname, "robots.txt"), robots);
 
-console.log(`✓ Generated ${pages.length} SEO pages + hub index`);
+console.log(`✓ Generated ${pages.length} receptionist + ${webPages.length} web-design pages + 2 hubs`);
 console.log(`✓ sitemap.xml (${STATIC.length + allUrls.length} urls) + robots.txt`);
-console.log(`  Hub: ${hub.url}`);
-console.log(`  Pages live under /ai-receptionist/<vertical>-<city>/`);
+console.log(`  Receptionist hub: ${hub.url}`);
+console.log(`  Web Design hub: ${webHub.url}`);
 console.log(`\nReview locally, then push signalcraft-site to publish (purplehulk/signalcraft → GitHub Pages).`);
