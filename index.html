@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Signalcraft — AI-built marketing for local businesses | Chesterfield & Richmond, VA</title>
-<meta name="description" content="Signalcraft is a veteran-owned, AI-powered marketing agency in the Richmond, VA area. We make local home-services businesses impossible to miss — starting with a free digital presence audit." />
-<meta property="og:title" content="Signalcraft — Get the message through." />
-<meta property="og:description" content="AI-built marketing that makes local businesses impossible to miss. Free digital presence audit." />
+<title>Signalcraft — AI-built websites & marketing for local businesses | Richmond & Chesterfield, VA</title>
+<meta name="description" content="Signalcraft builds affordable, AI-powered websites that book jobs — plus local SEO, reviews, and Ava, your 24/7 AI receptionist. Veteran-owned, Richmond, VA. Free presence audit." />
+<meta property="og:title" content="Signalcraft — AI websites that book jobs." />
+<meta property="og:description" content="Affordable, AI-built websites that book jobs — plus SEO, reviews & a 24/7 AI receptionist. Free presence audit." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://signalcraft.fyi" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
@@ -168,6 +168,8 @@ h2.title{font-size:clamp(32px,4vw,48px);color:#fff;max-width:18ch}
 /* bento services */
 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:64px}
 .b-a{grid-column:span 7}.b-b{grid-column:span 5}.b-c{grid-column:span 5}.b-d{grid-column:span 7}
+.b-lead{grid-column:1/-1}
+.b-lead .core{background:linear-gradient(150deg,#13182b,#0f1626);border-color:rgba(240,90,40,.22)}
 .svc .core{padding:36px 32px;height:100%;display:flex;flex-direction:column;
   transition:transform .7s var(--ease)}
 .svc:hover .core{transform:translateY(-4px)}
@@ -270,8 +272,9 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   font-family:'Space Mono';font-size:10.5px;letter-spacing:.06em;color:var(--faint)}
 
 /* pricing */
-.ptiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px;align-items:stretch}
-.tier .core{padding:34px 30px;height:100%;display:flex;flex-direction:column;position:relative;
+.ptiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:64px;align-items:stretch}
+@media(max-width:1080px) and (min-width:921px){.ptiers{grid-template-columns:repeat(2,1fr)}}
+.tier .core{padding:30px 22px;height:100%;display:flex;flex-direction:column;position:relative;
   transition:transform .6s var(--ease)}
 .tier:hover .core{transform:translateY(-4px)}
 .tier .tlabel{font-family:'Space Mono';font-size:10.5px;letter-spacing:.18em;color:var(--faint);margin-bottom:18px}
@@ -320,8 +323,8 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   .b-a,.b-b,.b-c,.b-d{grid-column:span 1}
   .burger{display:none}
   nav{left:16px;right:16px;transform:none;width:auto;flex-wrap:wrap;justify-content:space-between;padding:8px 10px}
-  nav .links{order:3;flex-basis:100%;display:flex;gap:2px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline)}
-  nav .links a{flex:1 1 0;min-width:0;text-align:center;padding:9px 4px;font-size:12.5px;white-space:nowrap}
+  nav .links{order:3;flex-basis:100%;display:flex;flex-wrap:wrap;gap:2px 4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline)}
+  nav .links a{flex:1 1 calc(33.333% - 4px);min-width:0;text-align:center;padding:9px 4px;font-size:12.5px;white-space:nowrap}
   section.blk{padding:96px 0}
   .contact .core{padding:34px 26px}
   .wrap{padding:0 20px}
@@ -361,6 +364,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   </a>
   <div class="links">
     <a href="services.html">Services</a>
+    <a href="#websites">Websites</a>
     <a href="#pricing">Pricing</a>
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
@@ -372,6 +376,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
 
 <div class="sheet" id="sheet">
   <a href="services.html">Services</a>
+  <a href="#websites">Websites</a>
   <a href="#pricing">Pricing</a>
   <a href="work.html">Work</a>
   <a href="about.html">About</a>
@@ -465,28 +470,34 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   <section class="blk" id="services" style="padding-top:0">
     <div class="wrap">
       <div class="k rv">What we do</div>
-      <h2 class="title rv d1">Four ways we get your message through.</h2>
+      <h2 class="title rv d1">Five ways we get your message through.</h2>
       <div class="bento">
+        <div class="svc shell b-lead rv"><div class="core">
+          <div class="num">/01 — AI WEBSITES</div>
+          <h3>Your website, alive — and it answers.</h3>
+          <p>Hand-built (never templated) with motion, animation, and a live AI chat assistant baked in — it answers questions and captures every lead, then routes it straight to you. Live in days, from $149/mo.</p>
+          <div class="pill-row"><span class="tagp">AI-built</span><span class="tagp">Live chat</span><span class="tagp">Mobile-first</span><span class="tagp">From $149/mo</span></div>
+        </div></div>
         <div class="svc shell b-a rv"><div class="core">
-          <div class="num">/01 — FINDABILITY</div>
+          <div class="num">/02 — FINDABILITY</div>
           <h3>Get found in local search</h3>
           <p>Websites and service-area pages engineered to surface the moment your neighbors search — built on what Google rewards now, including AI-driven search results.</p>
           <div class="pill-row"><span class="tagp">Local SEO</span><span class="tagp">Google Business Profile</span><span class="tagp">Service-area pages</span></div>
         </div></div>
         <div class="svc shell b-b rv d1"><div class="core">
-          <div class="num">/02 — PROOF</div>
+          <div class="num">/03 — PROOF</div>
           <h3>Put your reviews to work</h3>
           <p>Your five-star reputation, made impossible to miss — plus a simple engine that keeps new reviews coming after every job.</p>
           <div class="pill-row"><span class="tagp">Review showcase</span><span class="tagp">Reputation engine</span></div>
         </div></div>
         <div class="svc shell b-c rv"><div class="core">
-          <div class="num">/03 — STORY</div>
+          <div class="num">/04 — STORY</div>
           <h3>Video no competitor has</h3>
           <p>Owner intros, before-and-afters, the story behind the work. People hire people — we make sure they can see yours.</p>
           <div class="pill-row"><span class="tagp">Owner intro films</span><span class="tagp">Before / after</span><span class="tagp">Social cuts</span></div>
         </div></div>
         <div class="svc shell b-d hot rv d1"><div class="core">
-          <div class="num">/04 — ALWAYS ON</div>
+          <div class="num">/05 — ALWAYS ON</div>
           <h3>Capture every lead, even at 2am</h3>
           <p>Meet <b>Ava</b>, your AI receptionist — she answers, qualifies, and books appointments while you sleep, so the 9pm emergency call becomes tomorrow's first job, not a competitor's.</p>
           <div class="pill-row"><span class="tagp">Ava · AI receptionist</span><span class="tagp">Online booking</span><span class="tagp">Missed-call rescue</span></div>
@@ -500,14 +511,14 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
     <div class="wrap">
       <div class="k rv">AI-powered websites</div>
       <h2 class="title rv d1">Sites that don't just look good — they answer.</h2>
-      <p class="sub rv d2">Every site we build is hand-crafted to your brand, with a live AI assistant baked in that qualifies visitors and books the job 24/7. Add a custom AI-generated brand film and you've got something your competitors simply don't.</p>
+      <p class="sub rv d2">Every site we build is hand-crafted to your brand — alive with motion, mobile-first, and a live AI assistant baked in that answers questions and captures the lead 24/7. From $149/mo: a done-for-you site that's alive, not a stale template you maintain yourself. Add a custom AI-generated brand film and you've got something competitors simply don't.</p>
       <div class="webshow">
         <div class="copy rv">
           <h3>See one we built.</h3>
           <p>This is a working site for a sample home-services client — built, animated, and wired with a live AI chat assistant. Click in and talk to it.</p>
           <ul class="webfeat">
             <li><span class="ck" aria-hidden="true">✓</span><span><b>Built for conversion</b> — every section drives a call or a booking.</span></li>
-            <li><span class="ck" aria-hidden="true">✓</span><span><b>Live AI assistant</b> — answers questions and books visits, day or night.</span></li>
+            <li><span class="ck" aria-hidden="true">✓</span><span><b>Live AI assistant</b> — answers questions and captures every lead, day or night.</span></li>
             <li><span class="ck" aria-hidden="true">✓</span><span><b>Custom AI video</b> — a cinematic brand film, generated for you.</span></li>
             <li><span class="ck" aria-hidden="true">✓</span><span><b>Yours to keep</b> — fast hosting and ongoing care handled by us.</span></li>
           </ul>
@@ -565,7 +576,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
     <div class="wrap">
       <div class="k rv">Pricing</div>
       <h2 class="title rv d1">Built to fit your stage.</h2>
-      <p class="sub rv d2">Three ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
+      <p class="sub rv d2">Four ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
 
       <div class="founding shell rv d2"><div class="core">
         <div class="fbadge">★ Founding Client Program · 5 spots</div>
@@ -591,6 +602,26 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
       </div></div>
 
       <div class="ptiers">
+
+        <div class="tier shell rv"><div class="core">
+          <div class="tlabel">TIER 0 · LAUNCH</div>
+          <h3>Go Live</h3>
+          <p class="tdesc">A stunning, AI-powered website that's alive from day one — built, not templated.</p>
+          <div class="price">
+            <div class="setup">$0 <span>setup</span></div>
+            <div class="mo">+ <b>$149</b>/mo</div>
+            <div class="terms">Founding rate · $0 setup (reg. $299)</div>
+          </div>
+          <ul>
+            <li>Hand-crafted, mobile-first website (motion + animation)</li>
+            <li>Live AI chat — answers FAQs &amp; captures every lead</li>
+            <li>Hosting, SSL &amp; monthly site care included</li>
+            <li>Click-to-call + online request form</li>
+            <li>Live in days, not months</li>
+          </ul>
+          <div class="pcta"><a class="cta-pill" href="#audit">Start free audit <span class="arr">↗</span></a></div>
+          <div class="bestfor"><b>Best for:</b> beating a $3,000 agency site that's stale the day it ships.</div>
+        </div></div>
 
         <div class="tier shell rv"><div class="core">
           <div class="tlabel">TIER 1 · FOUNDATION</div>
