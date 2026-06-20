@@ -273,6 +273,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
 
 /* pricing */
 .ptiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:64px;align-items:stretch}
+@media(max-width:1080px) and (min-width:921px){.ptiers{grid-template-columns:repeat(2,1fr)}}
 .tier .core{padding:30px 22px;height:100%;display:flex;flex-direction:column;position:relative;
   transition:transform .6s var(--ease)}
 .tier:hover .core{transform:translateY(-4px)}
@@ -322,8 +323,8 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   .b-a,.b-b,.b-c,.b-d{grid-column:span 1}
   .burger{display:none}
   nav{left:16px;right:16px;transform:none;width:auto;flex-wrap:wrap;justify-content:space-between;padding:8px 10px}
-  nav .links{order:3;flex-basis:100%;display:flex;gap:2px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline)}
-  nav .links a{flex:1 1 0;min-width:0;text-align:center;padding:9px 4px;font-size:12.5px;white-space:nowrap}
+  nav .links{order:3;flex-basis:100%;display:flex;flex-wrap:wrap;gap:2px 4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--hairline)}
+  nav .links a{flex:1 1 calc(33.333% - 4px);min-width:0;text-align:center;padding:9px 4px;font-size:12.5px;white-space:nowrap}
   section.blk{padding:96px 0}
   .contact .core{padding:34px 26px}
   .wrap{padding:0 20px}
@@ -469,7 +470,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   <section class="blk" id="services" style="padding-top:0">
     <div class="wrap">
       <div class="k rv">What we do</div>
-      <h2 class="title rv d1">Four ways we get your message through.</h2>
+      <h2 class="title rv d1">Five ways we get your message through.</h2>
       <div class="bento">
         <div class="svc shell b-lead rv"><div class="core">
           <div class="num">/01 — AI WEBSITES</div>
@@ -575,7 +576,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
     <div class="wrap">
       <div class="k rv">Pricing</div>
       <h2 class="title rv d1">Built to fit your stage.</h2>
-      <p class="sub rv d2">Three ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
+      <p class="sub rv d2">Four ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
 
       <div class="founding shell rv d2"><div class="core">
         <div class="fbadge">★ Founding Client Program · 5 spots</div>
