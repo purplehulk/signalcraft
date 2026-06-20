@@ -163,6 +163,7 @@ function navHtml() {
     <a href="/services.html">Services</a>
     <a href="/work.html">Work</a>
     <a href="/ai-receptionist/">AI Receptionist</a>
+    <a href="/web-design/">Web Design</a>
     <a href="/contact.html">Contact</a>
   </div>
   <a class="cta-pill" href="/contact.html">Free audit <span class="arr">↗</span></a>
@@ -172,6 +173,7 @@ function navHtml() {
   <a href="/services.html">Services</a>
   <a href="/work.html">Work</a>
   <a href="/ai-receptionist/">AI Receptionist</a>
+  <a href="/web-design/">Web Design</a>
   <a href="/contact.html">Contact</a>
   <a href="/contact.html">Get your free audit</a>
 </div>`;
@@ -185,6 +187,7 @@ function footerHtml() {
         <a href="/services.html">Services</a>
         <a href="/work.html">Work</a>
         <a href="/ai-receptionist/">AI Receptionist</a>
+        <a href="/web-design/">Web Design</a>
         <a href="/contact.html">Free audit</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -331,7 +334,7 @@ ${navHtml()}
   <section class="areas" aria-labelledby="areas-h">
     <div class="wrap">
       <h2 id="areas-h">AI receptionist service across ${c.region}</h2>
-      <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}.</p>
+      <p class="sub">Serving ${c.name} (${c.county}) and nearby ${c.nearby}. Need a website that books jobs too? <a href="/web-design/${v.slug}-${c.slug}/" style="color:#fff;border-bottom:1px solid var(--signal)">See ${v.name} web design in ${c.name} →</a></p>
       <div class="linkcols">
         <div><h3>${v.name} — other areas</h3><ul>${sameTradeOtherCities}</ul></div>
         <div><h3>Other trades in ${c.name}</h3><ul>${otherTradesThisCity}</ul></div>
