@@ -578,6 +578,57 @@ ${SCRIPTS}
   return { url, dir: join(__dirname, "ai-receptionist"), html };
 }
 
+// ── web-design hub ───────────────────────────────────────────────────────────
+function buildWebHub() {
+  const url = `${SITE}/web-design/`;
+  const title = `Web Design for Home-Service Businesses in Virginia | Signalcraft`;
+  const desc = `Affordable, AI-powered web design for home-service businesses across Virginia — HVAC, plumbing, roofing, electrical, and more. Sites that book jobs, from $149/mo. Find your trade and city.`;
+  const groups = VERTICALS.map((v) => `
+      <div style="margin-bottom:30px">
+        <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--signal);margin-bottom:12px;font-family:'Space Mono'">${v.icon} ${v.name}</h3>
+        <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:8px">${CITIES.map((c) => `<li><a href="/web-design/${v.slug}-${c.slug}/">${v.name} — ${c.name}, VA</a></li>`).join("")}</ul>
+      </div>`).join("");
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:title" content="Web Design for Home-Service Businesses — Virginia" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="${url}" />
+<link rel="icon" type="image/svg+xml" href="${ICON}" />
+${FONTS}
+<link rel="stylesheet" href="/assets/seo.css" />
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="field" aria-hidden="true"></div>
+${navHtml()}
+<div class="crumb"><div class="wrap"><a href="/">Home</a> › Web Design</div></div>
+<main id="main">
+  <header class="shero">
+    <div class="wrap">
+      <div class="k">Web Design · Virginia</div>
+      <h1>Websites that <span class="o">book jobs.</span></h1>
+      <p class="lead">Signalcraft builds alive, AI-powered websites for home-service businesses across Virginia — from <b>$149/mo</b>, done-for-you, live in days. <b>Pick your trade and city</b> to see how it works for you.</p>
+      <div class="hero-cta"><a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free audit <span class="arr" style="width:30px;height:30px">↗</span></a><a class="callbtn" href="/#pricing">See Go Live · $149/mo →</a></div>
+    </div>
+  </header>
+  <section class="sec" aria-label="Service pages">
+    <div class="wrap">${groups}</div>
+  </section>
+</main>
+${footerHtml()}
+${SCRIPTS}
+</body>
+</html>`;
+  return { url, dir: join(__dirname, "web-design"), html };
+}
+
 // ── run ───────────────────────────────────────────────────────────────────────
 const pages = [];
 for (const v of VERTICALS) for (const c of CITIES) pages.push(buildPage(v, c));
