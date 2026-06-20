@@ -168,6 +168,8 @@ h2.title{font-size:clamp(32px,4vw,48px);color:#fff;max-width:18ch}
 /* bento services */
 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:64px}
 .b-a{grid-column:span 7}.b-b{grid-column:span 5}.b-c{grid-column:span 5}.b-d{grid-column:span 7}
+.b-lead{grid-column:1/-1}
+.b-lead .core{background:linear-gradient(150deg,#13182b,#0f1626);border-color:rgba(240,90,40,.22)}
 .svc .core{padding:36px 32px;height:100%;display:flex;flex-direction:column;
   transition:transform .7s var(--ease)}
 .svc:hover .core{transform:translateY(-4px)}
@@ -469,26 +471,32 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
       <div class="k rv">What we do</div>
       <h2 class="title rv d1">Four ways we get your message through.</h2>
       <div class="bento">
+        <div class="svc shell b-lead rv"><div class="core">
+          <div class="num">/01 — AI WEBSITES</div>
+          <h3>Your website, alive — and it answers.</h3>
+          <p>Hand-built (never templated) with motion, animation, and a live AI chat assistant baked in — it answers questions and captures every lead, then routes it straight to you. Live in days, from $149/mo.</p>
+          <div class="pill-row"><span class="tagp">AI-built</span><span class="tagp">Live chat</span><span class="tagp">Mobile-first</span><span class="tagp">From $149/mo</span></div>
+        </div></div>
         <div class="svc shell b-a rv"><div class="core">
-          <div class="num">/01 — FINDABILITY</div>
+          <div class="num">/02 — FINDABILITY</div>
           <h3>Get found in local search</h3>
           <p>Websites and service-area pages engineered to surface the moment your neighbors search — built on what Google rewards now, including AI-driven search results.</p>
           <div class="pill-row"><span class="tagp">Local SEO</span><span class="tagp">Google Business Profile</span><span class="tagp">Service-area pages</span></div>
         </div></div>
         <div class="svc shell b-b rv d1"><div class="core">
-          <div class="num">/02 — PROOF</div>
+          <div class="num">/03 — PROOF</div>
           <h3>Put your reviews to work</h3>
           <p>Your five-star reputation, made impossible to miss — plus a simple engine that keeps new reviews coming after every job.</p>
           <div class="pill-row"><span class="tagp">Review showcase</span><span class="tagp">Reputation engine</span></div>
         </div></div>
         <div class="svc shell b-c rv"><div class="core">
-          <div class="num">/03 — STORY</div>
+          <div class="num">/04 — STORY</div>
           <h3>Video no competitor has</h3>
           <p>Owner intros, before-and-afters, the story behind the work. People hire people — we make sure they can see yours.</p>
           <div class="pill-row"><span class="tagp">Owner intro films</span><span class="tagp">Before / after</span><span class="tagp">Social cuts</span></div>
         </div></div>
         <div class="svc shell b-d hot rv d1"><div class="core">
-          <div class="num">/04 — ALWAYS ON</div>
+          <div class="num">/05 — ALWAYS ON</div>
           <h3>Capture every lead, even at 2am</h3>
           <p>Meet <b>Ava</b>, your AI receptionist — she answers, qualifies, and books appointments while you sleep, so the 9pm emergency call becomes tomorrow's first job, not a competitor's.</p>
           <div class="pill-row"><span class="tagp">Ava · AI receptionist</span><span class="tagp">Online booking</span><span class="tagp">Missed-call rescue</span></div>
