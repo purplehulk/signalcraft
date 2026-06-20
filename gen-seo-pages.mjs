@@ -633,7 +633,10 @@ ${SCRIPTS}
 const pages = [];
 for (const v of VERTICALS) for (const c of CITIES) pages.push(buildPage(v, c));
 const hub = buildHub();
-const allUrls = [hub.url, ...pages.map((p) => p.url)];
+const webPages = [];
+for (const v of VERTICALS) for (const c of CITIES) webPages.push(buildWebPage(v, c));
+const webHub = buildWebHub();
+const allUrls = [hub.url, ...pages.map((p) => p.url), webHub.url, ...webPages.map((p) => p.url)];
 
 // sitemap.xml (only the programmatic pages + the static top-level pages, all under one map)
 const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/tools/missed-call-calculator/", "/tools/instant-audit/", "/privacy.html", "/terms.html"].map((p) => SITE + p);
@@ -649,9 +652,11 @@ Sitemap: ${SITE}/sitemap.xml
 `;
 
 if (DRY) {
-  console.log(`[dry-run] would write ${pages.length} pages + hub + sitemap.xml + robots.txt:`);
+  console.log(`[dry-run] would write ${pages.length} receptionist + ${webPages.length} web-design pages + 2 hubs + sitemap.xml + robots.txt:`);
   console.log("  " + hub.url);
   for (const p of pages) console.log("  " + p.url);
+  console.log("  " + webHub.url);
+  for (const p of webPages) console.log("  " + p.url);
   process.exit(0);
 }
 
@@ -661,11 +666,13 @@ function write(dir, html) {
 }
 write(hub.dir, hub.html);
 for (const p of pages) write(p.dir, p.html);
+write(webHub.dir, webHub.html);
+for (const p of webPages) write(p.dir, p.html);
 writeFileSync(join(__dirname, "sitemap.xml"), sitemap);
 writeFileSync(join(__dirname, "robots.txt"), robots);
 
-console.log(`✓ Generated ${pages.length} SEO pages + hub index`);
+console.log(`✓ Generated ${pages.length} receptionist + ${webPages.length} web-design pages + 2 hubs`);
 console.log(`✓ sitemap.xml (${STATIC.length + allUrls.length} urls) + robots.txt`);
-console.log(`  Hub: ${hub.url}`);
-console.log(`  Pages live under /ai-receptionist/<vertical>-<city>/`);
+console.log(`  Receptionist hub: ${hub.url}`);
+console.log(`  Web Design hub: ${webHub.url}`);
 console.log(`\nReview locally, then push signalcraft-site to publish (purplehulk/signalcraft → GitHub Pages).`);
