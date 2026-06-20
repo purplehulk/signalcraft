@@ -394,7 +394,7 @@ const hub = buildHub();
 const allUrls = [hub.url, ...pages.map((p) => p.url)];
 
 // sitemap.xml (only the programmatic pages + the static top-level pages, all under one map)
-const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/tools/missed-call-calculator/", "/privacy.html", "/terms.html"].map((p) => SITE + p);
+const STATIC = ["/", "/services.html", "/work.html", "/about.html", "/contact.html", "/tools/missed-call-calculator/", "/tools/instant-audit/", "/privacy.html", "/terms.html"].map((p) => SITE + p);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${[...STATIC, ...allUrls].map((u) => `  <url><loc>${u}</loc><lastmod>${TODAY}</lastmod></url>`).join("\n")}

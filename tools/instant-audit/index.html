@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Instant Presence Audit for Local Businesses | Signalcraft</title>
+<meta name="description" content="Answer 5 quick questions and get an instant scorecard of how visible your home-service business is online — findability, reviews, after-hours lead capture, and video. Free, 60 seconds, no call required." />
+<link rel="canonical" href="https://signalcraft.fyi/tools/instant-audit/" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Free Instant Presence Audit — Signalcraft" />
+<meta property="og:description" content="How visible is your business, really? Get your instant scorecard in 60 seconds." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://signalcraft.fyi/tools/instant-audit/" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C1222'/%3E%3Cg transform='translate(19,46)' fill='none' stroke='%23F05A28' stroke-linecap='round'%3E%3Ccircle r='4' fill='%23F05A28' stroke='none'/%3E%3Cpath d='M0,-11 A11,11 0 0 1 11,0' stroke-width='4'/%3E%3Cpath d='M0,-20 A20,20 0 0 1 20,0' stroke-width='4' opacity='.75'/%3E%3Cpath d='M0,-29 A29,29 0 0 1 29,0' stroke-width='4' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/seo.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Instant Presence Audit","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Signalcraft","url":"https://signalcraft.fyi"},"description":"Instant self-assessment scorecard of a local business's online presence: findability, reviews, after-hours lead capture, and video."}</script>
+<style>
+  .ia-wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  .ia-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+  @media(max-width:860px){.ia-grid{grid-template-columns:1fr}}
+  .panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:26px}
+  .panel h2{font-family:'Space Grotesk';font-size:20px;margin:0 0 4px;color:#fff}
+  .panel .hint{color:rgba(255,255,255,.55);font-size:13px;margin:0 0 20px}
+  /* questions */
+  .q{margin-bottom:22px}
+  .q .qh{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:10px;display:flex;gap:8px}
+  .q .qn{font-family:'Space Mono';color:var(--signal);font-size:13px}
+  .opts{display:flex;flex-direction:column;gap:8px}
+  .opt{display:flex;align-items:center;gap:11px;width:100%;text-align:left;cursor:pointer;
+    background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.12);border-radius:12px;
+    padding:12px 14px;color:#cfd8e6;font-size:14px;font-family:inherit;transition:border-color .25s,background .25s,color .25s}
+  .opt:hover{border-color:rgba(240,90,40,.45);color:#fff}
+  .opt .dot{width:16px;height:16px;border-radius:50%;border:1.6px solid rgba(255,255,255,.30);flex:none;transition:all .25s}
+  .opt.sel{border-color:var(--signal);background:rgba(240,90,40,.10);color:#fff}
+  .opt.sel .dot{border-color:var(--signal);background:var(--signal);box-shadow:inset 0 0 0 3px #0A0F1C}
+  /* scorecard */
+  .score{position:sticky;top:18px}
+  .overall{text-align:center;border-bottom:1px solid rgba(255,255,255,.10);padding-bottom:20px;margin-bottom:20px}
+  .overall .num{font-family:'Space Grotesk';font-weight:700;line-height:1;letter-spacing:-.03em;font-size:clamp(54px,10vw,76px);color:#fff}
+  .overall .num span{font-size:.4em;color:rgba(255,255,255,.45)}
+  .overall .verdict{font-size:14.5px;color:var(--steel);margin-top:8px;min-height:20px}
+  .overall .verdict b{color:#fff}
+  .mrow{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;margin-bottom:16px}
+  .mrow .lbl{font-size:13.5px;color:#fff;font-weight:600}
+  .mrow .lbl span{display:block;font-size:11.5px;color:var(--steel);font-weight:400;margin-top:1px}
+  .grade-chip{font-family:'Space Mono';font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:99px;justify-self:end}
+  .gc-red{background:rgba(217,84,47,.16);color:#F0795A}
+  .gc-amber{background:rgba(217,138,31,.18);color:#E8A84E}
+  .gc-green{background:rgba(62,176,116,.18);color:#56C98C}
+  .gc-none{background:rgba(255,255,255,.06);color:var(--steel)}
+  .bar{grid-column:1 / -1;height:7px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;border-radius:99px;transition:width .8s cubic-bezier(.32,.72,0,1)}
+  .b-red i{background:linear-gradient(90deg,#C0432A,#F0795A)}
+  .b-amber i{background:linear-gradient(90deg,#B9831F,#E8A84E)}
+  .b-green i{background:linear-gradient(90deg,#2E9C68,#56C98C)}
+  /* capture */
+  .capture{margin-top:8px}
+  .capture .clab{font-size:13px;color:var(--steel);margin-bottom:12px}
+  .capture .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:480px){.capture .row2{grid-template-columns:1fr}}
+  .capture input{width:100%;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.14);border-radius:10px;
+    color:#fff;padding:11px 13px;font-size:14.5px;font-family:inherit;margin-bottom:10px}
+  .capture input::placeholder{color:rgba(255,255,255,.4)}
+  .capture button{width:100%;justify-content:center;cursor:pointer;border:0;margin-top:4px}
+  .capture .formnote{color:rgba(255,255,255,.45);font-size:12px;margin-top:12px;text-align:center}
+  .sent{display:none;text-align:center;padding:14px 0}
+  .sent.show{display:block}
+  .sent .ok{width:58px;height:58px;border-radius:999px;background:rgba(62,176,116,.15);color:#56C98C;
+    display:grid;place-items:center;margin:0 auto 16px;font-size:22px}
+  .sent h3{font-size:19px;color:#fff;margin-bottom:8px}
+  .sent p{color:var(--steel);font-size:14px;max-width:40ch;margin:0 auto 18px}
+  .sent .small{color:rgba(255,255,255,.45);font-size:12.5px;margin-top:14px}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="field" aria-hidden="true" style="margin:0"></div>
+<nav aria-label="Primary">
+  <a class="brand" href="/"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg><b>Signalcraft</b></a>
+  <div class="links">
+    <a href="/services.html">Services</a>
+    <a href="/index.html#pricing">Pricing</a>
+    <a href="/work.html">Work</a>
+    <a href="/ai-receptionist/">AI Receptionist</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+  <a class="cta-pill" href="/contact.html">Free audit <span class="arr">↗</span></a>
+</nav>
+
+<main id="main">
+  <header class="shero">
+    <div class="wrap">
+      <div class="k">Free tool · 60 seconds · no call required</div>
+      <h1>How visible is your business <span class="o">— really?</span></h1>
+      <p class="lead">Answer five quick questions and get an instant scorecard across the four things that decide whether local customers find you and book you: findability, reviews, after-hours capture, and video. Then we'll show you the fixes.</p>
+    </div>
+  </header>
+
+  <section class="sec" style="padding-top:8px">
+    <div class="ia-wrap">
+      <div class="ia-grid">
+
+        <!-- QUESTIONS -->
+        <div class="panel">
+          <h2>Your business</h2>
+          <p class="hint">No logins, no data pulled — just your honest read. Tap an answer.</p>
+          <div id="quiz"></div>
+        </div>
+
+        <!-- SCORECARD + CAPTURE -->
+        <div class="panel score">
+          <div class="overall">
+            <div class="num"><span id="ovPre"></span><span id="ovNum">—</span><span id="ovDen"></span></div>
+            <div class="verdict" id="verdict">Answer the questions to see your score.</div>
+          </div>
+
+          <div id="card">
+            <div class="mrow" data-dim="find">
+              <span class="lbl">Findability <span>Do customers see you in local search?</span></span>
+              <span class="grade-chip gc-none">—</span>
+              <span class="bar b-red"><i></i></span>
+            </div>
+            <div class="mrow" data-dim="rev">
+              <span class="lbl">Reviews working for you <span>Is your reputation visible where it counts?</span></span>
+              <span class="grade-chip gc-none">—</span>
+              <span class="bar b-red"><i></i></span>
+            </div>
+            <div class="mrow" data-dim="after">
+              <span class="lbl">After-hours lead capture <span>Can a 9pm emergency book you?</span></span>
+              <span class="grade-chip gc-none">—</span>
+              <span class="bar b-red"><i></i></span>
+            </div>
+            <div class="mrow" data-dim="video">
+              <span class="lbl">Video &amp; story <span>Can customers see who they're hiring?</span></span>
+              <span class="grade-chip gc-none">—</span>
+              <span class="bar b-red"><i></i></span>
+            </div>
+          </div>
+
+          <!-- email capture -->
+          <form class="capture" id="auditForm" action="https://api.web3forms.com/submit" method="POST" style="margin-top:22px">
+            <input type="hidden" name="access_key" value="37fd3bb7-6acd-494d-956e-de52e1b39fd0" />
+            <input type="hidden" name="subject" value="New Signalcraft instant-audit lead" />
+            <input type="hidden" name="from_name" value="Signalcraft Instant Audit" />
+            <input type="hidden" name="replyto" value="email" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="Overall score" id="hsOverall" value="" />
+            <input type="hidden" name="Findability" id="hsFind" value="" />
+            <input type="hidden" name="Reviews" id="hsRev" value="" />
+            <input type="hidden" name="After-hours" id="hsAfter" value="" />
+            <input type="hidden" name="Video" id="hsVideo" value="" />
+            <input type="hidden" name="Answers" id="hsAnswers" value="" />
+            <p class="clab">Get your full report + the exact fixes for your weak spots:</p>
+            <div class="row2">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="text" name="business" placeholder="Business name" required />
+            </div>
+            <input type="email" name="email" placeholder="Email address" required />
+            <input type="tel" name="phone" placeholder="Phone (optional)" />
+            <button type="submit" class="cta-pill">Send my full report <span class="arr">↗</span></button>
+            <p class="formnote">Free. We reply fast — your info is never sold or shared.</p>
+          </form>
+
+          <div class="sent" id="sent">
+            <div class="ok">✓</div>
+            <h3>Got it — report on the way.</h3>
+            <p>Your personalized fixes are headed to your inbox. Want the fast track? Grab a 20-minute debrief and we'll walk you through them live.</p>
+            <a class="cta-pill" href="https://cal.com/signalcraft" target="_blank" rel="noopener">Book your 20-min debrief <span class="arr">↗</span></a>
+            <p class="small">Prefer to talk now? Call Ava: <a href="tel:+15717559684" style="color:var(--steel)">(571) 755-9684</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">Your scorecard is the start. We build the fixes.</h2>
+      <p>Signalcraft turns those weak spots into booked jobs — websites that rank, reviews put to work, and Ava, your AI receptionist answering 24/7. Veteran-owned, built right here in Richmond &amp; Chesterfield.</p>
+      <a class="cta-pill" href="/contact.html" style="font-size:15px;padding:13px 13px 13px 24px">Get your free full audit <span class="arr" style="width:30px;height:30px">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="/"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#121A2E" stroke="rgba(255,255,255,.12)"/><g transform="translate(19,46)" fill="none" stroke="#F05A28" stroke-linecap="round"><circle r="4" fill="#F05A28" stroke="none"/><path d="M0,-11 A11,11 0 0 1 11,0" stroke-width="4"/><path d="M0,-20 A20,20 0 0 1 20,0" stroke-width="4" opacity=".75"/><path d="M0,-29 A29,29 0 0 1 29,0" stroke-width="4" opacity=".45"/></g></svg> Signalcraft</a>
+      <div class="lk">
+        <a href="/services.html">Services</a>
+        <a href="/index.html#pricing">Pricing</a>
+        <a href="/work.html">Work</a>
+        <a href="/ai-receptionist/">AI Receptionist</a>
+        <a href="/contact.html">Free audit</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Signalcraft · Richmond &amp; Chesterfield, VA · Veteran owned</span>
+      <span class="by"><b>Get the message through.</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Each question maps to a scorecard dimension. score 0-100.
+  var QUESTIONS = [
+    { dim:"find", q:"How's your website?", opts:[
+      {l:"I don't have one",s:10},
+      {l:"I have one, but it's old or not mobile-friendly",s:42},
+      {l:"Modern, fast, mobile-friendly",s:88} ]},
+    { dim:"rev", q:"Your Google reviews?", opts:[
+      {l:"Under 10, or I'm not sure",s:20},
+      {l:"A decent amount (10–50)",s:55},
+      {l:"50+ and still growing",s:90} ]},
+    { dim:"after", q:"When a customer calls after hours or you're on a job?", opts:[
+      {l:"It goes to voicemail",s:15},
+      {l:"It rings — sometimes we miss it",s:45},
+      {l:"A person or AI always answers",s:92} ]},
+    { dim:"after", q:"Can customers book you online, 24/7?", opts:[
+      {l:"No",s:15},
+      {l:"Only a contact form",s:50},
+      {l:"Yes — real-time online booking",s:90} ]},
+    { dim:"video", q:"Video on your site or Google (owner intro, before/after)?", opts:[
+      {l:"None",s:10},
+      {l:"A little",s:50},
+      {l:"Yes — real video that shows the work",s:85} ]}
+  ];
+  // per-dimension grade labels by tier [red, amber, green]
+  var LABELS = {
+    find:["INVISIBLE","PATCHY","FOUND"],
+    rev:["UNDERUSED","OK","WORKING"],
+    after:["LEAKING","PATCHY","COVERED"],
+    video:["NONE","THIN","STRONG"]
+  };
+  var answers = {}; // qIndex -> {dim,s,l}
+
+  // build quiz UI
+  var quiz = document.getElementById("quiz");
+  QUESTIONS.forEach(function(item, qi){
+    var wrap = document.createElement("div"); wrap.className = "q";
+    var h = document.createElement("div"); h.className = "qh";
+    h.innerHTML = '<span class="qn">'+(qi+1)+'.</span><span>'+item.q+'</span>';
+    wrap.appendChild(h);
+    var opts = document.createElement("div"); opts.className = "opts";
+    item.opts.forEach(function(o){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt";
+      b.innerHTML = '<span class="dot"></span><span>'+o.l+'</span>';
+      b.addEventListener("click", function(){
+        opts.querySelectorAll(".opt").forEach(function(x){x.classList.remove("sel");});
+        b.classList.add("sel");
+        answers[qi] = {dim:item.dim, s:o.s, l:o.l};
+        render();
+      });
+      opts.appendChild(b);
+    });
+    wrap.appendChild(opts);
+    quiz.appendChild(wrap);
+  });
+
+  function tier(score){ return score < 35 ? 0 : (score < 70 ? 1 : 2); }
+  var TIERCLS = [["gc-red","b-red"],["gc-amber","b-amber"],["gc-green","b-green"]];
+
+  function dimScore(dim){
+    var vals = [];
+    QUESTIONS.forEach(function(item, qi){ if(item.dim===dim && answers[qi]) vals.push(answers[qi].s); });
+    if(!vals.length) return null;
+    return Math.round(vals.reduce(function(a,b){return a+b;},0)/vals.length);
+  }
+
+  function render(){
+    var dims = ["find","rev","after","video"], got = [];
+    dims.forEach(function(d){
+      var row = document.querySelector('.mrow[data-dim="'+d+'"]');
+      var chip = row.querySelector(".grade-chip");
+      var bar = row.querySelector(".bar");
+      var fill = bar.querySelector("i");
+      var sc = dimScore(d);
+      if(sc===null){
+        chip.className = "grade-chip gc-none"; chip.textContent = "—";
+        bar.className = "bar b-red"; fill.style.width = "0%";
+        return;
+      }
+      got.push(sc);
+      var t = tier(sc);
+      chip.className = "grade-chip " + TIERCLS[t][0];
+      chip.textContent = LABELS[d][t];
+      bar.className = "bar " + TIERCLS[t][1];
+      fill.style.width = sc + "%";
+    });
+
+    var allAnswered = Object.keys(answers).length === QUESTIONS.length;
+    var ovEl = document.getElementById("ovNum"),
+        preEl = document.getElementById("ovPre"),
+        denEl = document.getElementById("ovDen"),
+        vEl = document.getElementById("verdict");
+    if(allAnswered){
+      var overall = Math.round(got.reduce(function(a,b){return a+b;},0)/got.length);
+      ovEl.textContent = overall; denEl.textContent = "/100"; preEl.textContent = "";
+      var t = tier(overall);
+      vEl.innerHTML = t===0 ? "<b>You're leaking jobs.</b> Several gaps are costing you bookings right now."
+                   : t===1 ? "<b>You're getting by — but losing ground</b> to sharper competitors."
+                   : "<b>Strong foundation.</b> A few tweaks make you untouchable.";
+      // populate hidden fields for the lead email
+      document.getElementById("hsOverall").value = overall + "/100";
+      document.getElementById("hsFind").value  = dimScore("find");
+      document.getElementById("hsRev").value   = dimScore("rev");
+      document.getElementById("hsAfter").value = dimScore("after");
+      document.getElementById("hsVideo").value = dimScore("video");
+      document.getElementById("hsAnswers").value = QUESTIONS.map(function(it,qi){
+        return (qi+1)+") "+(answers[qi]?answers[qi].l:"—"); }).join("  |  ");
+    } else {
+      ovEl.textContent = got.length ? Math.round(got.reduce(function(a,b){return a+b;},0)/got.length) : "—";
+      denEl.textContent = got.length ? "/100" : "";
+      vEl.textContent = "Answer all five to lock in your score.";
+    }
+  }
+
+  // form submit -> Web3Forms, then booking success state
+  var form = document.getElementById("auditForm"), sent = document.getElementById("sent");
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    var btn = form.querySelector("button"); var label = btn.innerHTML;
+    btn.innerHTML = "Sending…"; btn.style.opacity = ".7"; btn.disabled = true;
+    try{
+      var r = await fetch("https://api.web3forms.com/submit",{
+        method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      var out = await r.json();
+      if(out.success){ form.style.display="none"; sent.classList.add("show"); sent.scrollIntoView({block:"center",behavior:"smooth"}); }
+      else { throw new Error(out.message||"failed"); }
+    }catch(err){
+      console.error(err);
+      btn.innerHTML = label; btn.style.opacity = "1"; btn.disabled = false;
+      alert("Something went wrong sending that — please try again, or call (571) 755-9684.");
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
