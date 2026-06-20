@@ -269,11 +269,40 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
   font-family:'Space Mono';font-size:10.5px;letter-spacing:.06em;color:var(--faint)}
 
+/* pricing */
+.ptiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px;align-items:stretch}
+.tier .core{padding:34px 30px;height:100%;display:flex;flex-direction:column;position:relative;
+  transition:transform .6s var(--ease)}
+.tier:hover .core{transform:translateY(-4px)}
+.tier .tlabel{font-family:'Space Mono';font-size:10.5px;letter-spacing:.18em;color:var(--faint);margin-bottom:18px}
+.tier h3{font-size:26px;color:#fff;margin-bottom:8px}
+.tier .tdesc{font-size:14px;color:var(--steel);min-height:60px;margin-bottom:18px;max-width:30ch}
+.tier .price{padding-bottom:22px;border-bottom:1px solid var(--hairline);margin-bottom:22px}
+.tier .price .setup{font-family:'Space Grotesk';font-weight:700;font-size:36px;color:#fff;letter-spacing:-.03em}
+.tier .price .setup span{font-size:14px;color:var(--steel);font-weight:500;letter-spacing:0}
+.tier .price .mo{font-size:16px;color:#fff;font-weight:600;margin-top:4px}
+.tier .price .mo b{color:var(--signal);font-weight:700}
+.tier .price .terms{font-family:'Space Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin-top:10px}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px}
+.tier li{font-size:13.5px;color:var(--steel);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.tier li::before{content:"✓";color:var(--signal);font-weight:700;flex-shrink:0}
+.tier li.lead{color:#fff;font-weight:600}
+.tier .pcta{margin-top:auto}
+.tier .bestfor{font-size:12.5px;color:var(--faint);margin-top:18px}
+.tier .bestfor b{color:var(--steel);font-weight:600}
+.tier.hot .core{background:linear-gradient(165deg,#1A1410,#231509);border-color:rgba(240,90,40,.3)}
+.tier.hot .tlabel{color:var(--signal)}
+.tier .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--signal);color:#fff;
+  font-family:'Space Mono';font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  padding:6px 13px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px -8px var(--signal-glow)}
+.pnote{font-family:'Space Mono';font-size:11px;letter-spacing:.05em;color:var(--faint);text-align:center;margin-top:30px}
+
 /* responsive */
 @media(max-width:920px){
   .hero .wrap,.story .wrap,.contact .grid{grid-template-columns:1fr}
   .hero{padding-top:120px}
-  .stats,.steps{grid-template-columns:1fr}
+  .stats,.steps,.ptiers{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr}
   .b-a,.b-b,.b-c,.b-d{grid-column:span 1}
   .burger{display:none}
@@ -319,6 +348,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   </a>
   <div class="links">
     <a href="services.html">Services</a>
+    <a href="#pricing">Pricing</a>
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -329,6 +359,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
 
 <div class="sheet" id="sheet">
   <a href="services.html">Services</a>
+  <a href="#pricing">Pricing</a>
   <a href="work.html">Work</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -444,8 +475,8 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
         <div class="svc shell b-d hot rv d1"><div class="core">
           <div class="num">/04 — ALWAYS ON</div>
           <h3>Capture every lead, even at 2am</h3>
-          <p>Online booking and AI-powered response that answers, qualifies, and books while you sleep — so the 9pm emergency call becomes tomorrow's first job, not a competitor's.</p>
-          <div class="pill-row"><span class="tagp">Online booking</span><span class="tagp">AI receptionist</span><span class="tagp">Missed-call rescue</span></div>
+          <p>Meet <b>Ava</b>, your AI receptionist — she answers, qualifies, and books appointments while you sleep, so the 9pm emergency call becomes tomorrow's first job, not a competitor's.</p>
+          <div class="pill-row"><span class="tagp">Ava · AI receptionist</span><span class="tagp">Online booking</span><span class="tagp">Missed-call rescue</span></div>
         </div></div>
       </div>
     </div>
@@ -516,6 +547,81 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section class="blk" id="pricing" style="padding-top:0">
+    <div class="wrap">
+      <div class="k rv">Pricing</div>
+      <h2 class="title rv d1">Built to fit your stage.</h2>
+      <p class="sub rv d2">Three ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
+      <div class="ptiers">
+
+        <div class="tier shell rv"><div class="core">
+          <div class="tlabel">TIER 1 · FOUNDATION</div>
+          <h3>Get Found</h3>
+          <p class="tdesc">Look professional and show up when neighbors search for you.</p>
+          <div class="price">
+            <div class="setup">$497 <span>setup</span></div>
+            <div class="mo">+ <b>$197</b>/mo</div>
+            <div class="terms">Low setup + monthly</div>
+          </div>
+          <ul>
+            <li>Professional mobile-first website (built or rebuilt)</li>
+            <li>Google Business Profile setup &amp; optimization</li>
+            <li>All your 5-star reviews, showcased</li>
+            <li>Click-to-call + online request form</li>
+            <li>Monthly site care, hosting &amp; updates</li>
+          </ul>
+          <div class="pcta"><a class="cta-pill" href="#audit">Start free audit <span class="arr">↗</span></a></div>
+          <div class="bestfor"><b>Best for:</b> a great business that's nearly invisible online.</div>
+        </div></div>
+
+        <div class="tier hot shell rv d1"><div class="core">
+          <div class="badge">★ Most Popular</div>
+          <div class="tlabel">TIER 2 · GROWTH</div>
+          <h3>Get Booked</h3>
+          <p class="tdesc">Turn that visibility into a steady stream of booked jobs.</p>
+          <div class="price">
+            <div class="setup">$997 <span>setup</span></div>
+            <div class="mo">+ <b>$497</b>/mo</div>
+            <div class="terms">Setup + monthly retainer</div>
+          </div>
+          <ul>
+            <li class="lead">Everything in Get Found, plus</li>
+            <li>Local SEO + service-area pages (your towns)</li>
+            <li>Automated review-request engine</li>
+            <li>Speed-to-lead: instant follow-up on new leads</li>
+            <li>1 signature video / month</li>
+            <li>Call tracking + monthly results report</li>
+          </ul>
+          <div class="pcta"><a class="cta-pill" href="#audit">Start free audit <span class="arr">↗</span></a></div>
+          <div class="bestfor"><b>Best for:</b> ready to grow and wants the phone ringing.</div>
+        </div></div>
+
+        <div class="tier shell rv d2"><div class="core">
+          <div class="tlabel">TIER 3 · ALWAYS-ON</div>
+          <h3>Never Miss a Job</h3>
+          <p class="tdesc">An AI-powered system that books work even while you sleep.</p>
+          <div class="price">
+            <div class="setup">$1,497 <span>setup</span></div>
+            <div class="mo">+ <b>$897</b>/mo</div>
+            <div class="terms">Subscription · or pay-per-booked-job</div>
+          </div>
+          <ul>
+            <li class="lead">Everything in Get Booked, plus</li>
+            <li><b>Ava</b>, your AI receptionist — answers &amp; books calls 24/7, even after hours</li>
+            <li>Lead reactivation — win back old contacts</li>
+            <li>Priority support + quarterly strategy</li>
+            <li>Advanced reporting dashboard</li>
+          </ul>
+          <div class="pcta"><a class="cta-pill" href="#audit">Start free audit <span class="arr">↗</span></a></div>
+          <div class="bestfor"><b>Best for:</b> losing after-hours calls to competitors.</div>
+        </div></div>
+
+      </div>
+      <p class="pnote rv">Starting prices · every business is different · custom quotes always welcome</p>
+    </div>
+  </section>
+
   <!-- STORY -->
   <section class="blk story" id="story" style="padding-top:0">
     <div class="wrap">
@@ -544,6 +650,7 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
             <h2>Request your free presence audit.</h2>
             <p class="sub">Tell us your business name and we'll run the full scan — search visibility, website, reviews, booking path. You get the one-page report either way. No pressure, no jargon.</p>
             <div class="clist">
+              <a href="tel:+15717559684"><span class="ic">☎</span> Call Ava live: (571) 755-9684</a>
               <a href="mailto:audit@signalcraft.fyi"><span class="ic">✉</span> audit@signalcraft.fyi</a>
               <a href="https://signalcraft.fyi"><span class="ic">◎</span> signalcraft.fyi</a>
             </div>
