@@ -297,6 +297,19 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
   font-family:'Space Mono';font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
   padding:6px 13px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px -8px var(--signal-glow)}
 .pnote{font-family:'Space Mono';font-size:11px;letter-spacing:.05em;color:var(--faint);text-align:center;margin-top:30px}
+/* founding client callout */
+.founding{margin:36px 0 6px}
+.founding .core{padding:30px 34px;background:linear-gradient(150deg,#1A1410,#190f08);border-color:rgba(240,90,40,.34)}
+.fbadge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--signal);margin-bottom:14px}
+.founding h3{font-size:clamp(22px,2.6vw,28px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.founding .flead{color:var(--steel);font-size:15px;max-width:62ch;margin-bottom:22px}
+.fgive{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-bottom:24px}
+@media(max-width:680px){.fgive{grid-template-columns:1fr}}
+.fcol .fcap{font-family:'Space Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:9px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcol li{font-size:13.5px;color:var(--steel);display:flex;gap:9px;align-items:flex-start;line-height:1.45}
+.fcol li::before{content:"✓";color:var(--signal);font-weight:700;flex:none}
+.fcol li b{color:#fff;font-weight:600}
 
 /* responsive */
 @media(max-width:920px){
@@ -553,6 +566,30 @@ footer{border-top:1px solid var(--hairline);padding:54px 0 40px;position:relativ
       <div class="k rv">Pricing</div>
       <h2 class="title rv d1">Built to fit your stage.</h2>
       <p class="sub rv d2">Three ways to work together — from a simple foundation to an always-on system that catches every lead. Start with the free audit; every business is different, so custom quotes are always welcome.</p>
+
+      <div class="founding shell rv d2"><div class="core">
+        <div class="fbadge">★ Founding Client Program · 5 spots</div>
+        <h3>Be one of our first five — and lock it in for good.</h3>
+        <p class="flead">We're hand-picking five founding clients to build our first wave of real, published results. Help us prove it works, and you keep founder pricing for as long as you're with us.</p>
+        <div class="fgive">
+          <div class="fcol">
+            <span class="fcap">What you get</span>
+            <ul>
+              <li>A <b>locked founding rate</b> — your monthly never goes up while you're a client</li>
+              <li><b>50% off</b> your one-time setup fee</li>
+            </ul>
+          </div>
+          <div class="fcol">
+            <span class="fcap">All we ask in return</span>
+            <ul>
+              <li>A short case study of the results we get you</li>
+              <li>A testimonial &amp; a Google review — once you see the wins</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta-pill" href="#audit">Claim a founding spot <span class="arr">↗</span></a>
+      </div></div>
+
       <div class="ptiers">
 
         <div class="tier shell rv"><div class="core">
